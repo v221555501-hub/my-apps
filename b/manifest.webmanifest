@@ -1,0 +1,27 @@
+{
+  "id": "./rose-mobile-v2",
+  "name": "Rosé 日常｜個人待辦",
+  "short_name": "Rosé 日常",
+  "lang": "zh-Hant",
+  "description": "可離線開啟的待辦與行事曆管理 App",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f5f3",
+  "theme_color": "#783e52",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
