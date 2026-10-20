@@ -1,0 +1,492 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#762d45"><meta name="referrer" content="strict-origin-when-cross-origin"><title>玫瑰日序 v2</title><style>
+:root{--ink:#3e2930;--muted:#806d72;--brand:#762d45;--rose:#ead0d3;--paper:#faf6f3;--line:#e9dedd;--soft:#f3e7e6;--white:#fffdfb;--shadow:0 12px 34px #572c3910;font-family:"Segoe UI","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--paper);font-size:15px}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button,a,input,select,textarea{touch-action:manipulation}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #bc8b56;outline-offset:3px}button{border:1px solid var(--line);border-radius:12px;padding:10px 15px;background:var(--white);color:var(--ink)}button:hover{border-color:var(--brand)}.primary{background:var(--brand);color:white;border-color:var(--brand)}.quiet{background:transparent}.danger{color:#a02135}.app{display:grid;grid-template-columns:242px minmax(0,1fr);min-height:100vh}aside{padding:36px 23px;background:var(--white);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:28px;position:sticky;top:0;height:100vh}.logo{display:flex;gap:12px;align-items:center}.mark{background:var(--brand);color:white;border-radius:16px;width:43px;height:43px;display:grid;place-items:center;font-size:23px}.logo strong{font-size:19px;display:block}.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}.nav{display:grid;gap:8px}.nav button{text-align:left;border-color:transparent;background:transparent}.nav button.active{background:var(--soft);color:var(--brand);font-weight:700}.side-title{font-size:12px;color:var(--muted);margin:0 0 12px}.legend{display:grid;gap:15px;font-size:13px}.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:8px;background:var(--brand)}.side-foot{margin-top:auto;font-size:12px;line-height:1.8;color:var(--muted)}.main{padding:30px clamp(20px,4vw,62px);max-width:1550px;width:100%;margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:35px;gap:16px}.topbar p{font-size:12px;color:var(--muted);margin:0}.actions{display:flex;flex-wrap:wrap;gap:8px}.hero{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}h1{font-family:Georgia,"Microsoft JhengHei",serif;font-size:clamp(28px,3vw,39px);font-weight:500;margin:8px 0 12px;letter-spacing:.02em}h2{font-size:18px;margin:0}.subtitle{color:var(--muted);line-height:1.7;margin:0}.hero-art{border:1px solid var(--line);border-radius:50%;width:108px;height:108px;display:grid;place-items:center;color:var(--brand);font-size:48px;background:linear-gradient(135deg,var(--soft),var(--white));box-shadow:var(--shadow);flex-shrink:0}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:28px 0}.stat{padding:19px 22px;background:var(--white);border:1px solid var(--line);border-radius:17px}.stat span{display:block;font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:30px;font-weight:500;margin:9px 0}.stat small{font-size:11px;color:var(--muted)}.toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:25px 0 16px}.toolbar h2{margin-right:auto}.tabs{display:flex;gap:5px;flex-wrap:wrap}.tabs button{font-size:13px}.tabs button.active{background:var(--brand);color:white}.filters{padding:15px;background:var(--white);border:1px solid var(--line);border-radius:15px;display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}.filters input{flex:1;min-width:170px}.filters select{max-width:180px}input,select,textarea{border:1px solid var(--line);border-radius:9px;padding:11px 12px;background:var(--white);color:var(--ink);min-width:0}textarea{resize:vertical;min-height:100px}input::placeholder{color:var(--muted)}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 275px;gap:22px}.panel{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}.panel h2{margin-bottom:15px}.record{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:19px;display:flex;gap:14px;margin-bottom:12px;position:relative;border-left:4px solid var(--record-color,var(--rose))}.check{width:28px;height:28px;border-radius:50%;padding:0;flex-shrink:0;color:var(--brand);margin-top:2px}.check.done{background:var(--brand);color:white}.record-body{min-width:0;flex:1}.record h3{font-size:16px;margin:2px 0 10px;overflow-wrap:anywhere;line-height:1.5}.record.done h3{text-decoration:line-through;color:var(--muted)}.meta{display:flex;flex-wrap:wrap;gap:7px;font-size:11px;align-items:center}.badge{padding:4px 8px;background:var(--soft);border-radius:6px;color:var(--brand)}.overdue{color:#ac263c;background:#ffedf0}.record p{font-size:13px;color:var(--muted);line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;margin:12px 0}.row-actions{display:flex;gap:6px;margin-top:14px}.row-actions button{font-size:12px;padding:6px 10px}.empty{text-align:center;padding:48px 15px;border:1px dashed var(--line);border-radius:16px;color:var(--muted);line-height:1.9}.empty b{display:block;color:var(--ink);font-size:18px;margin-bottom:8px}.note{font-size:12px;color:var(--muted);line-height:1.8}.progress{height:6px;background:var(--soft);border-radius:8px;overflow:hidden;margin:15px 0}.progress span{display:block;background:var(--brand);height:100%}.mini-list{margin-top:20px}.mini-list p{font-size:12px;border-top:1px solid var(--line);padding-top:12px;line-height:1.8;overflow-wrap:anywhere}.month-head{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:18px}.calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.weekday{text-align:center;font-size:12px;color:var(--muted);padding:8px 0}.day{min-height:82px;border-radius:9px;padding:8px 5px;text-align:left;display:flex;flex-direction:column;gap:4px;overflow:hidden}.day.today{border:2px solid var(--brand)}.day.selected{background:var(--soft)}.day small{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;display:block}.day.blank{background:transparent;border:0;min-height:0}.cal-list{margin-top:22px}.backups{display:grid;gap:18px}.backups section{max-width:780px}.backups h3{margin-top:0}.backups p{line-height:1.8;font-size:14px;color:var(--muted)}dialog{border:1px solid var(--line);border-radius:22px;background:var(--paper);color:var(--ink);width:min(620px,calc(100% - 24px));padding:0;max-height:90dvh;box-shadow:0 25px 100px #25101e33}dialog::backdrop{background:#24151e70;backdrop-filter:blur(3px)}.dialog-head{padding:24px 25px 0;display:flex;justify-content:space-between;align-items:center}.dialog-head h2{margin:0}form{padding:22px 25px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{display:flex;flex-direction:column;gap:8px;font-size:13px}.full{grid-column:1/-1}.form-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:22px}.error{color:#a02135;font-size:13px;line-height:1.6}.notice{background:var(--soft);border:1px solid var(--line);padding:13px 17px;border-radius:12px;margin:15px 0;font-size:13px;line-height:1.7}#toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);max-width:90vw;background:var(--ink);color:white;border-radius:12px;padding:13px 22px;z-index:10;box-shadow:var(--shadow)}#toast:empty{display:none}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}footer{font-size:11px;color:var(--muted);margin-top:35px;line-height:1.8}.community{--ink:#243c4d;--muted:#657784;--brand:#254e72;--rose:#bed0dd;--paper:#f2f5f7;--line:#dde5eb;--soft:#e6edf3;--white:#fff;--shadow:0 12px 34px #29445208}.community .hero-art{border-radius:25px}.community h1{font-family:inherit;font-weight:650}
+@media(min-width:1500px){.main{padding-top:40px}}@media(max-width:1100px){.app{grid-template-columns:200px minmax(0,1fr)}aside{padding:28px 16px}.workspace{grid-template-columns:1fr}.rail{display:none}.main{padding:25px}.stat{padding:16px}.filters select{flex:1;max-width:none}.topbar{align-items:flex-start}}@media(max-width:680px){.app{display:block}aside{height:auto;position:relative;padding:18px;border-right:0;border-bottom:1px solid var(--line);gap:15px}.logo strong{font-size:17px}.mark{width:36px;height:36px}.nav{display:flex;gap:4px;overflow-x:auto}.nav button{white-space:nowrap;padding:9px 11px;font-size:13px}.legend-wrap,.side-foot{display:none}.main{padding:20px 15px}.topbar{margin-bottom:25px;flex-wrap:wrap}.topbar .actions{width:100%}.topbar button{flex:1;font-size:12px;padding:9px}.hero-art{width:65px;height:65px;font-size:32px}h1{font-size:28px}.subtitle{font-size:13px}.stats{grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}.stat{padding:14px 16px}.stat strong{font-size:26px;margin:5px 0}.toolbar{flex-wrap:wrap;align-items:flex-start}.toolbar h2{font-size:17px;width:100%}.filters{padding:11px;gap:8px}.filters input{flex-basis:100%;width:100%}.filters select{width:calc(50% - 5px);flex:auto;font-size:12px}.record{padding:15px 12px;gap:10px}.panel{padding:14px}.day{min-height:65px;font-size:12px}.day small{font-size:9px}.form-grid{gap:13px}.form-grid label{grid-column:1/-1}.dialog-head{padding:20px 18px 0}form{padding:18px}.hero{gap:10px}.actions button{padding:9px 10px}.month-head h2{font-size:16px}.month-head button{padding:8px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+[hidden]{display:none!important}.filters select{min-width:110px}
+
+[hidden]{display:none!important}.main{margin:0 auto}.stat{text-align:left}.stat.active{border:2px solid var(--brand);background:var(--soft)}.filters{align-items:center}.filters input{width:190px}.filters select{min-width:125px}.badge.tag{border:0;border-radius:6px;cursor:pointer;font-size:11px;padding:5px 8px}.row-actions{flex-wrap:wrap}.row-actions a{font-size:12px;align-self:center;color:var(--brand)}.tracking{padding:12px 14px;background:var(--paper);border-radius:12px;margin-top:12px}.tracking b{font-size:12px;color:var(--muted)}.tracking p{margin-bottom:0}.dates{font-weight:600}.legend-button{display:flex;text-align:left;align-items:center;font-size:13px;border:0;background:transparent;padding:8px 0;overflow-wrap:anywhere}.legend-button small{margin-left:auto;color:var(--muted)}.community-strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.section-title{margin:25px 0 16px}.weekend{color:#a53549;background:#fff6f4}.holiday{background:#ffedee}.holiday-name{color:#a53549;font-weight:700}.day.selected{outline:2px solid var(--brand)}.list-panel{margin-bottom:16px}.list-panel h3{margin-top:0}.list-add{display:flex;gap:10px;padding:0;margin-bottom:15px}.list-add input{flex:1}.list-names{display:grid;gap:9px}.list-names>div{display:flex;gap:8px;flex-wrap:wrap}.list-names>div>button:first-child{margin-right:auto;overflow-wrap:anywhere}.check-label{display:flex;flex-direction:row;align-items:center;gap:9px;line-height:1.7}.check-label input{width:18px;height:18px;accent-color:var(--brand)}.calendar-list{display:grid;gap:15px;margin-bottom:15px}.calendar-list small{color:var(--muted);margin-left:auto}.calendar-list label{overflow-wrap:anywhere}#google-config,#subscribe{padding:10px 0 20px}#google-config>button{margin-top:18px}#subscribe button{margin-top:15px}#content>.panel{margin-bottom:18px}#filter-summary{line-height:1.8;margin-bottom:10px}.toolbar{scroll-margin-top:20px}dialog{width:min(680px,calc(100% - 20px))}#form .form-actions{position:sticky;bottom:-18px;padding:12px 0;background:var(--paper)}a{color:var(--brand)}.connect-top{font-size:12px;padding:9px}.side-foot{line-height:1.8}.record h3{font-weight:700}.day{min-height:110px}.day small{font-size:11px}
+@media(max-width:680px){.day{min-height:90px;padding:6px 3px}.day small{font-size:10px}.calendar{gap:3px}.list-names>div{gap:5px}.list-names button{font-size:12px;padding:8px}.community-strip button{font-size:12px}.record h3{font-size:16px}.stat.active{padding:13px 15px}.filters select{min-width:120px}.row-actions button{padding:9px;font-size:12px}.form-grid label:not(.check-label){font-size:14px}input,textarea,select{font-size:16px}.hero-art{display:none}.topbar{gap:10px}.topbar p{width:100%}}
+
+</style><script src="https://accounts.google.com/gsi/client" async defer></script></head><body><div class="app"><aside><div class="logo"><div class="mark">✧</div><div><strong>玫瑰日序</strong><span class="eyebrow">DAILY DESK · 2.0</span></div></div><nav class="nav" id="nav" aria-label="主要功能"></nav><div class="legend-wrap"><p class="side-title" id="legend-title"></p><div class="legend" id="legend"></div></div><div class="side-foot">本機任務・手動分類<br><span id="google-indicator"></span><br>Google 提醒需完成連線與新增。</div></aside><main class="main"><header class="topbar"><p>手機與電腦適用 · 臺北時間</p><div class="actions"><button data-view="google">Gmail 行事曆</button><button data-act="backup">匯出備份</button><button data-act="add" class="primary">＋ 新增任務</button></div></header><div class="hero"><div><span class="eyebrow">YOUR DAY, YOUR WAY</span><h1>把日子，整理成喜歡的樣子。</h1><p class="subtitle">任務、聯繫與行程，依照你的方式整理。</p></div><div class="hero-art" aria-hidden="true">✧</div></div><div id="storage-warning" class="notice" role="alert" hidden></div><section id="stats" class="stats" aria-label="點選狀態查看明細"></section><p class="note">已到期＝今天到期未完成；超期＝超過結束時間未完成。統計依目前分類等條件計算。</p><div class="toolbar"><h2 id="view-title"></h2><span class="note" id="count" aria-live="polite"></span></div><p class="note" id="filter-summary"></p><section class="filters" id="filters" aria-label="搜尋與篩選"></section><div id="content"></div><footer>玫瑰日序 v2.0 · 本機資料請定期備份。<br>Google 連線需自行設定並授權；僅在 APP 開啟且授權有效時讀取更新。</footer></main></div><dialog id="editor" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title">新增任務</h2><button data-act="close" aria-label="關閉編輯">✕</button></div><form id="form"></form></dialog><input type="file" id="import-file" accept=".json,application/json" hidden><div id="toast" role="status" aria-live="polite"></div><script>const APP={"id":"personal-b","folder":"B-personal","name":"玫瑰日序","community":false,"hero":"把日子，整理成喜歡的樣子。"};
+const HOLIDAYS={"2026-01-01":{"off":true,"name":"開國紀念日"},"2026-01-02":{"off":false,"name":""},"2026-01-03":{"off":true,"name":""},"2026-01-04":{"off":true,"name":""},"2026-01-05":{"off":false,"name":""},"2026-01-06":{"off":false,"name":""},"2026-01-07":{"off":false,"name":""},"2026-01-08":{"off":false,"name":""},"2026-01-09":{"off":false,"name":""},"2026-01-10":{"off":true,"name":""},"2026-01-11":{"off":true,"name":""},"2026-01-12":{"off":false,"name":""},"2026-01-13":{"off":false,"name":""},"2026-01-14":{"off":false,"name":""},"2026-01-15":{"off":false,"name":""},"2026-01-16":{"off":false,"name":""},"2026-01-17":{"off":true,"name":""},"2026-01-18":{"off":true,"name":""},"2026-01-19":{"off":false,"name":""},"2026-01-20":{"off":false,"name":""},"2026-01-21":{"off":false,"name":""},"2026-01-22":{"off":false,"name":""},"2026-01-23":{"off":false,"name":""},"2026-01-24":{"off":true,"name":""},"2026-01-25":{"off":true,"name":""},"2026-01-26":{"off":false,"name":""},"2026-01-27":{"off":false,"name":""},"2026-01-28":{"off":false,"name":""},"2026-01-29":{"off":false,"name":""},"2026-01-30":{"off":false,"name":""},"2026-01-31":{"off":true,"name":""},"2026-02-01":{"off":true,"name":""},"2026-02-02":{"off":false,"name":""},"2026-02-03":{"off":false,"name":""},"2026-02-04":{"off":false,"name":""},"2026-02-05":{"off":false,"name":""},"2026-02-06":{"off":false,"name":""},"2026-02-07":{"off":true,"name":""},"2026-02-08":{"off":true,"name":""},"2026-02-09":{"off":false,"name":""},"2026-02-10":{"off":false,"name":""},"2026-02-11":{"off":false,"name":""},"2026-02-12":{"off":false,"name":""},"2026-02-13":{"off":false,"name":""},"2026-02-14":{"off":true,"name":""},"2026-02-15":{"off":true,"name":"小年夜"},"2026-02-16":{"off":true,"name":"農曆除夕"},"2026-02-17":{"off":true,"name":"春節"},"2026-02-18":{"off":true,"name":"春節"},"2026-02-19":{"off":true,"name":"春節"},"2026-02-20":{"off":true,"name":"補假"},"2026-02-21":{"off":true,"name":""},"2026-02-22":{"off":true,"name":""},"2026-02-23":{"off":false,"name":""},"2026-02-24":{"off":false,"name":""},"2026-02-25":{"off":false,"name":""},"2026-02-26":{"off":false,"name":""},"2026-02-27":{"off":true,"name":"補假"},"2026-02-28":{"off":true,"name":"和平紀念日"},"2026-03-01":{"off":true,"name":""},"2026-03-02":{"off":false,"name":""},"2026-03-03":{"off":false,"name":""},"2026-03-04":{"off":false,"name":""},"2026-03-05":{"off":false,"name":""},"2026-03-06":{"off":false,"name":""},"2026-03-07":{"off":true,"name":""},"2026-03-08":{"off":true,"name":""},"2026-03-09":{"off":false,"name":""},"2026-03-10":{"off":false,"name":""},"2026-03-11":{"off":false,"name":""},"2026-03-12":{"off":false,"name":""},"2026-03-13":{"off":false,"name":""},"2026-03-14":{"off":true,"name":""},"2026-03-15":{"off":true,"name":""},"2026-03-16":{"off":false,"name":""},"2026-03-17":{"off":false,"name":""},"2026-03-18":{"off":false,"name":""},"2026-03-19":{"off":false,"name":""},"2026-03-20":{"off":false,"name":""},"2026-03-21":{"off":true,"name":""},"2026-03-22":{"off":true,"name":""},"2026-03-23":{"off":false,"name":""},"2026-03-24":{"off":false,"name":""},"2026-03-25":{"off":false,"name":""},"2026-03-26":{"off":false,"name":""},"2026-03-27":{"off":false,"name":""},"2026-03-28":{"off":true,"name":""},"2026-03-29":{"off":true,"name":""},"2026-03-30":{"off":false,"name":""},"2026-03-31":{"off":false,"name":""},"2026-04-01":{"off":false,"name":""},"2026-04-02":{"off":false,"name":""},"2026-04-03":{"off":true,"name":"補假"},"2026-04-04":{"off":true,"name":"兒童節"},"2026-04-05":{"off":true,"name":"清明節"},"2026-04-06":{"off":true,"name":"補假"},"2026-04-07":{"off":false,"name":""},"2026-04-08":{"off":false,"name":""},"2026-04-09":{"off":false,"name":""},"2026-04-10":{"off":false,"name":""},"2026-04-11":{"off":true,"name":""},"2026-04-12":{"off":true,"name":""},"2026-04-13":{"off":false,"name":""},"2026-04-14":{"off":false,"name":""},"2026-04-15":{"off":false,"name":""},"2026-04-16":{"off":false,"name":""},"2026-04-17":{"off":false,"name":""},"2026-04-18":{"off":true,"name":""},"2026-04-19":{"off":true,"name":""},"2026-04-20":{"off":false,"name":""},"2026-04-21":{"off":false,"name":""},"2026-04-22":{"off":false,"name":""},"2026-04-23":{"off":false,"name":""},"2026-04-24":{"off":false,"name":""},"2026-04-25":{"off":true,"name":""},"2026-04-26":{"off":true,"name":""},"2026-04-27":{"off":false,"name":""},"2026-04-28":{"off":false,"name":""},"2026-04-29":{"off":false,"name":""},"2026-04-30":{"off":false,"name":""},"2026-05-01":{"off":true,"name":"勞動節"},"2026-05-02":{"off":true,"name":""},"2026-05-03":{"off":true,"name":""},"2026-05-04":{"off":false,"name":""},"2026-05-05":{"off":false,"name":""},"2026-05-06":{"off":false,"name":""},"2026-05-07":{"off":false,"name":""},"2026-05-08":{"off":false,"name":""},"2026-05-09":{"off":true,"name":""},"2026-05-10":{"off":true,"name":""},"2026-05-11":{"off":false,"name":""},"2026-05-12":{"off":false,"name":""},"2026-05-13":{"off":false,"name":""},"2026-05-14":{"off":false,"name":""},"2026-05-15":{"off":false,"name":""},"2026-05-16":{"off":true,"name":""},"2026-05-17":{"off":true,"name":""},"2026-05-18":{"off":false,"name":""},"2026-05-19":{"off":false,"name":""},"2026-05-20":{"off":false,"name":""},"2026-05-21":{"off":false,"name":""},"2026-05-22":{"off":false,"name":""},"2026-05-23":{"off":true,"name":""},"2026-05-24":{"off":true,"name":""},"2026-05-25":{"off":false,"name":""},"2026-05-26":{"off":false,"name":""},"2026-05-27":{"off":false,"name":""},"2026-05-28":{"off":false,"name":""},"2026-05-29":{"off":false,"name":""},"2026-05-30":{"off":true,"name":""},"2026-05-31":{"off":true,"name":""},"2026-06-01":{"off":false,"name":""},"2026-06-02":{"off":false,"name":""},"2026-06-03":{"off":false,"name":""},"2026-06-04":{"off":false,"name":""},"2026-06-05":{"off":false,"name":""},"2026-06-06":{"off":true,"name":""},"2026-06-07":{"off":true,"name":""},"2026-06-08":{"off":false,"name":""},"2026-06-09":{"off":false,"name":""},"2026-06-10":{"off":false,"name":""},"2026-06-11":{"off":false,"name":""},"2026-06-12":{"off":false,"name":""},"2026-06-13":{"off":true,"name":""},"2026-06-14":{"off":true,"name":""},"2026-06-15":{"off":false,"name":""},"2026-06-16":{"off":false,"name":""},"2026-06-17":{"off":false,"name":""},"2026-06-18":{"off":false,"name":""},"2026-06-19":{"off":true,"name":"端午節"},"2026-06-20":{"off":true,"name":""},"2026-06-21":{"off":true,"name":""},"2026-06-22":{"off":false,"name":""},"2026-06-23":{"off":false,"name":""},"2026-06-24":{"off":false,"name":""},"2026-06-25":{"off":false,"name":""},"2026-06-26":{"off":false,"name":""},"2026-06-27":{"off":true,"name":""},"2026-06-28":{"off":true,"name":""},"2026-06-29":{"off":false,"name":""},"2026-06-30":{"off":false,"name":""},"2026-07-01":{"off":false,"name":""},"2026-07-02":{"off":false,"name":""},"2026-07-03":{"off":false,"name":""},"2026-07-04":{"off":true,"name":""},"2026-07-05":{"off":true,"name":""},"2026-07-06":{"off":false,"name":""},"2026-07-07":{"off":false,"name":""},"2026-07-08":{"off":false,"name":""},"2026-07-09":{"off":false,"name":""},"2026-07-10":{"off":false,"name":""},"2026-07-11":{"off":true,"name":""},"2026-07-12":{"off":true,"name":""},"2026-07-13":{"off":false,"name":""},"2026-07-14":{"off":false,"name":""},"2026-07-15":{"off":false,"name":""},"2026-07-16":{"off":false,"name":""},"2026-07-17":{"off":false,"name":""},"2026-07-18":{"off":true,"name":""},"2026-07-19":{"off":true,"name":""},"2026-07-20":{"off":false,"name":""},"2026-07-21":{"off":false,"name":""},"2026-07-22":{"off":false,"name":""},"2026-07-23":{"off":false,"name":""},"2026-07-24":{"off":false,"name":""},"2026-07-25":{"off":true,"name":""},"2026-07-26":{"off":true,"name":""},"2026-07-27":{"off":false,"name":""},"2026-07-28":{"off":false,"name":""},"2026-07-29":{"off":false,"name":""},"2026-07-30":{"off":false,"name":""},"2026-07-31":{"off":false,"name":""},"2026-08-01":{"off":true,"name":""},"2026-08-02":{"off":true,"name":""},"2026-08-03":{"off":false,"name":""},"2026-08-04":{"off":false,"name":""},"2026-08-05":{"off":false,"name":""},"2026-08-06":{"off":false,"name":""},"2026-08-07":{"off":false,"name":""},"2026-08-08":{"off":true,"name":""},"2026-08-09":{"off":true,"name":""},"2026-08-10":{"off":false,"name":""},"2026-08-11":{"off":false,"name":""},"2026-08-12":{"off":false,"name":""},"2026-08-13":{"off":false,"name":""},"2026-08-14":{"off":false,"name":""},"2026-08-15":{"off":true,"name":""},"2026-08-16":{"off":true,"name":""},"2026-08-17":{"off":false,"name":""},"2026-08-18":{"off":false,"name":""},"2026-08-19":{"off":false,"name":""},"2026-08-20":{"off":false,"name":""},"2026-08-21":{"off":false,"name":""},"2026-08-22":{"off":true,"name":""},"2026-08-23":{"off":true,"name":""},"2026-08-24":{"off":false,"name":""},"2026-08-25":{"off":false,"name":""},"2026-08-26":{"off":false,"name":""},"2026-08-27":{"off":false,"name":""},"2026-08-28":{"off":false,"name":""},"2026-08-29":{"off":true,"name":""},"2026-08-30":{"off":true,"name":""},"2026-08-31":{"off":false,"name":""},"2026-09-01":{"off":false,"name":""},"2026-09-02":{"off":false,"name":""},"2026-09-03":{"off":false,"name":""},"2026-09-04":{"off":false,"name":""},"2026-09-05":{"off":true,"name":""},"2026-09-06":{"off":true,"name":""},"2026-09-07":{"off":false,"name":""},"2026-09-08":{"off":false,"name":""},"2026-09-09":{"off":false,"name":""},"2026-09-10":{"off":false,"name":""},"2026-09-11":{"off":false,"name":""},"2026-09-12":{"off":true,"name":""},"2026-09-13":{"off":true,"name":""},"2026-09-14":{"off":false,"name":""},"2026-09-15":{"off":false,"name":""},"2026-09-16":{"off":false,"name":""},"2026-09-17":{"off":false,"name":""},"2026-09-18":{"off":false,"name":""},"2026-09-19":{"off":true,"name":""},"2026-09-20":{"off":true,"name":""},"2026-09-21":{"off":false,"name":""},"2026-09-22":{"off":false,"name":""},"2026-09-23":{"off":false,"name":""},"2026-09-24":{"off":false,"name":""},"2026-09-25":{"off":true,"name":"中秋節"},"2026-09-26":{"off":true,"name":""},"2026-09-27":{"off":true,"name":""},"2026-09-28":{"off":true,"name":"孔子誕辰紀念日/教師節"},"2026-09-29":{"off":false,"name":""},"2026-09-30":{"off":false,"name":""},"2026-10-01":{"off":false,"name":""},"2026-10-02":{"off":false,"name":""},"2026-10-03":{"off":true,"name":""},"2026-10-04":{"off":true,"name":""},"2026-10-05":{"off":false,"name":""},"2026-10-06":{"off":false,"name":""},"2026-10-07":{"off":false,"name":""},"2026-10-08":{"off":false,"name":""},"2026-10-09":{"off":true,"name":"補假"},"2026-10-10":{"off":true,"name":"國慶日"},"2026-10-11":{"off":true,"name":""},"2026-10-12":{"off":false,"name":""},"2026-10-13":{"off":false,"name":""},"2026-10-14":{"off":false,"name":""},"2026-10-15":{"off":false,"name":""},"2026-10-16":{"off":false,"name":""},"2026-10-17":{"off":true,"name":""},"2026-10-18":{"off":true,"name":""},"2026-10-19":{"off":false,"name":""},"2026-10-20":{"off":false,"name":""},"2026-10-21":{"off":false,"name":""},"2026-10-22":{"off":false,"name":""},"2026-10-23":{"off":false,"name":""},"2026-10-24":{"off":true,"name":""},"2026-10-25":{"off":true,"name":"臺灣光復暨金門古寧頭大捷紀念日"},"2026-10-26":{"off":true,"name":"補假"},"2026-10-27":{"off":false,"name":""},"2026-10-28":{"off":false,"name":""},"2026-10-29":{"off":false,"name":""},"2026-10-30":{"off":false,"name":""},"2026-10-31":{"off":true,"name":""},"2026-11-01":{"off":true,"name":""},"2026-11-02":{"off":false,"name":""},"2026-11-03":{"off":false,"name":""},"2026-11-04":{"off":false,"name":""},"2026-11-05":{"off":false,"name":""},"2026-11-06":{"off":false,"name":""},"2026-11-07":{"off":true,"name":""},"2026-11-08":{"off":true,"name":""},"2026-11-09":{"off":false,"name":""},"2026-11-10":{"off":false,"name":""},"2026-11-11":{"off":false,"name":""},"2026-11-12":{"off":false,"name":""},"2026-11-13":{"off":false,"name":""},"2026-11-14":{"off":true,"name":""},"2026-11-15":{"off":true,"name":""},"2026-11-16":{"off":false,"name":""},"2026-11-17":{"off":false,"name":""},"2026-11-18":{"off":false,"name":""},"2026-11-19":{"off":false,"name":""},"2026-11-20":{"off":false,"name":""},"2026-11-21":{"off":true,"name":""},"2026-11-22":{"off":true,"name":""},"2026-11-23":{"off":false,"name":""},"2026-11-24":{"off":false,"name":""},"2026-11-25":{"off":false,"name":""},"2026-11-26":{"off":false,"name":""},"2026-11-27":{"off":false,"name":""},"2026-11-28":{"off":true,"name":""},"2026-11-29":{"off":true,"name":""},"2026-11-30":{"off":false,"name":""},"2026-12-01":{"off":false,"name":""},"2026-12-02":{"off":false,"name":""},"2026-12-03":{"off":false,"name":""},"2026-12-04":{"off":false,"name":""},"2026-12-05":{"off":true,"name":""},"2026-12-06":{"off":true,"name":""},"2026-12-07":{"off":false,"name":""},"2026-12-08":{"off":false,"name":""},"2026-12-09":{"off":false,"name":""},"2026-12-10":{"off":false,"name":""},"2026-12-11":{"off":false,"name":""},"2026-12-12":{"off":true,"name":""},"2026-12-13":{"off":true,"name":""},"2026-12-14":{"off":false,"name":""},"2026-12-15":{"off":false,"name":""},"2026-12-16":{"off":false,"name":""},"2026-12-17":{"off":false,"name":""},"2026-12-18":{"off":false,"name":""},"2026-12-19":{"off":true,"name":""},"2026-12-20":{"off":true,"name":""},"2026-12-21":{"off":false,"name":""},"2026-12-22":{"off":false,"name":""},"2026-12-23":{"off":false,"name":""},"2026-12-24":{"off":false,"name":""},"2026-12-25":{"off":true,"name":"行憲紀念日"},"2026-12-26":{"off":true,"name":""},"2026-12-27":{"off":true,"name":""},"2026-12-28":{"off":false,"name":""},"2026-12-29":{"off":false,"name":""},"2026-12-30":{"off":false,"name":""},"2026-12-31":{"off":false,"name":""},"2027-01-01":{"off":true,"name":"開國紀念日"},"2027-01-02":{"off":true,"name":""},"2027-01-03":{"off":true,"name":""},"2027-01-04":{"off":false,"name":""},"2027-01-05":{"off":false,"name":""},"2027-01-06":{"off":false,"name":""},"2027-01-07":{"off":false,"name":""},"2027-01-08":{"off":false,"name":""},"2027-01-09":{"off":true,"name":""},"2027-01-10":{"off":true,"name":""},"2027-01-11":{"off":false,"name":""},"2027-01-12":{"off":false,"name":""},"2027-01-13":{"off":false,"name":""},"2027-01-14":{"off":false,"name":""},"2027-01-15":{"off":false,"name":""},"2027-01-16":{"off":true,"name":""},"2027-01-17":{"off":true,"name":""},"2027-01-18":{"off":false,"name":""},"2027-01-19":{"off":false,"name":""},"2027-01-20":{"off":false,"name":""},"2027-01-21":{"off":false,"name":""},"2027-01-22":{"off":false,"name":""},"2027-01-23":{"off":true,"name":""},"2027-01-24":{"off":true,"name":""},"2027-01-25":{"off":false,"name":""},"2027-01-26":{"off":false,"name":""},"2027-01-27":{"off":false,"name":""},"2027-01-28":{"off":false,"name":""},"2027-01-29":{"off":false,"name":""},"2027-01-30":{"off":true,"name":""},"2027-01-31":{"off":true,"name":""},"2027-02-01":{"off":false,"name":""},"2027-02-02":{"off":false,"name":""},"2027-02-03":{"off":false,"name":""},"2027-02-04":{"off":true,"name":"小年夜"},"2027-02-05":{"off":true,"name":"農曆除夕"},"2027-02-06":{"off":true,"name":"春節"},"2027-02-07":{"off":true,"name":"春節"},"2027-02-08":{"off":true,"name":"春節"},"2027-02-09":{"off":true,"name":"補假"},"2027-02-10":{"off":true,"name":"補假"},"2027-02-11":{"off":false,"name":""},"2027-02-12":{"off":false,"name":""},"2027-02-13":{"off":true,"name":""},"2027-02-14":{"off":true,"name":""},"2027-02-15":{"off":false,"name":""},"2027-02-16":{"off":false,"name":""},"2027-02-17":{"off":false,"name":""},"2027-02-18":{"off":false,"name":""},"2027-02-19":{"off":false,"name":""},"2027-02-20":{"off":true,"name":""},"2027-02-21":{"off":true,"name":""},"2027-02-22":{"off":false,"name":""},"2027-02-23":{"off":false,"name":""},"2027-02-24":{"off":false,"name":""},"2027-02-25":{"off":false,"name":""},"2027-02-26":{"off":false,"name":""},"2027-02-27":{"off":true,"name":""},"2027-02-28":{"off":true,"name":"和平紀念日"},"2027-03-01":{"off":true,"name":"補假"},"2027-03-02":{"off":false,"name":""},"2027-03-03":{"off":false,"name":""},"2027-03-04":{"off":false,"name":""},"2027-03-05":{"off":false,"name":""},"2027-03-06":{"off":true,"name":""},"2027-03-07":{"off":true,"name":""},"2027-03-08":{"off":false,"name":""},"2027-03-09":{"off":false,"name":""},"2027-03-10":{"off":false,"name":""},"2027-03-11":{"off":false,"name":""},"2027-03-12":{"off":false,"name":""},"2027-03-13":{"off":true,"name":""},"2027-03-14":{"off":true,"name":""},"2027-03-15":{"off":false,"name":""},"2027-03-16":{"off":false,"name":""},"2027-03-17":{"off":false,"name":""},"2027-03-18":{"off":false,"name":""},"2027-03-19":{"off":false,"name":""},"2027-03-20":{"off":true,"name":""},"2027-03-21":{"off":true,"name":""},"2027-03-22":{"off":false,"name":""},"2027-03-23":{"off":false,"name":""},"2027-03-24":{"off":false,"name":""},"2027-03-25":{"off":false,"name":""},"2027-03-26":{"off":false,"name":""},"2027-03-27":{"off":true,"name":""},"2027-03-28":{"off":true,"name":""},"2027-03-29":{"off":false,"name":""},"2027-03-30":{"off":false,"name":""},"2027-03-31":{"off":false,"name":""},"2027-04-01":{"off":false,"name":""},"2027-04-02":{"off":false,"name":""},"2027-04-03":{"off":true,"name":""},"2027-04-04":{"off":true,"name":"兒童節"},"2027-04-05":{"off":true,"name":"清明節"},"2027-04-06":{"off":true,"name":"補假"},"2027-04-07":{"off":false,"name":""},"2027-04-08":{"off":false,"name":""},"2027-04-09":{"off":false,"name":""},"2027-04-10":{"off":true,"name":""},"2027-04-11":{"off":true,"name":""},"2027-04-12":{"off":false,"name":""},"2027-04-13":{"off":false,"name":""},"2027-04-14":{"off":false,"name":""},"2027-04-15":{"off":false,"name":""},"2027-04-16":{"off":false,"name":""},"2027-04-17":{"off":true,"name":""},"2027-04-18":{"off":true,"name":""},"2027-04-19":{"off":false,"name":""},"2027-04-20":{"off":false,"name":""},"2027-04-21":{"off":false,"name":""},"2027-04-22":{"off":false,"name":""},"2027-04-23":{"off":false,"name":""},"2027-04-24":{"off":true,"name":""},"2027-04-25":{"off":true,"name":""},"2027-04-26":{"off":false,"name":""},"2027-04-27":{"off":false,"name":""},"2027-04-28":{"off":false,"name":""},"2027-04-29":{"off":false,"name":""},"2027-04-30":{"off":true,"name":"補假"},"2027-05-01":{"off":true,"name":"勞動節"},"2027-05-02":{"off":true,"name":""},"2027-05-03":{"off":false,"name":""},"2027-05-04":{"off":false,"name":""},"2027-05-05":{"off":false,"name":""},"2027-05-06":{"off":false,"name":""},"2027-05-07":{"off":false,"name":""},"2027-05-08":{"off":true,"name":""},"2027-05-09":{"off":true,"name":""},"2027-05-10":{"off":false,"name":""},"2027-05-11":{"off":false,"name":""},"2027-05-12":{"off":false,"name":""},"2027-05-13":{"off":false,"name":""},"2027-05-14":{"off":false,"name":""},"2027-05-15":{"off":true,"name":""},"2027-05-16":{"off":true,"name":""},"2027-05-17":{"off":false,"name":""},"2027-05-18":{"off":false,"name":""},"2027-05-19":{"off":false,"name":""},"2027-05-20":{"off":false,"name":""},"2027-05-21":{"off":false,"name":""},"2027-05-22":{"off":true,"name":""},"2027-05-23":{"off":true,"name":""},"2027-05-24":{"off":false,"name":""},"2027-05-25":{"off":false,"name":""},"2027-05-26":{"off":false,"name":""},"2027-05-27":{"off":false,"name":""},"2027-05-28":{"off":false,"name":""},"2027-05-29":{"off":true,"name":""},"2027-05-30":{"off":true,"name":""},"2027-05-31":{"off":false,"name":""},"2027-06-01":{"off":false,"name":""},"2027-06-02":{"off":false,"name":""},"2027-06-03":{"off":false,"name":""},"2027-06-04":{"off":false,"name":""},"2027-06-05":{"off":true,"name":""},"2027-06-06":{"off":true,"name":""},"2027-06-07":{"off":false,"name":""},"2027-06-08":{"off":false,"name":""},"2027-06-09":{"off":true,"name":"端午節"},"2027-06-10":{"off":false,"name":""},"2027-06-11":{"off":false,"name":""},"2027-06-12":{"off":true,"name":""},"2027-06-13":{"off":true,"name":""},"2027-06-14":{"off":false,"name":""},"2027-06-15":{"off":false,"name":""},"2027-06-16":{"off":false,"name":""},"2027-06-17":{"off":false,"name":""},"2027-06-18":{"off":false,"name":""},"2027-06-19":{"off":true,"name":""},"2027-06-20":{"off":true,"name":""},"2027-06-21":{"off":false,"name":""},"2027-06-22":{"off":false,"name":""},"2027-06-23":{"off":false,"name":""},"2027-06-24":{"off":false,"name":""},"2027-06-25":{"off":false,"name":""},"2027-06-26":{"off":true,"name":""},"2027-06-27":{"off":true,"name":""},"2027-06-28":{"off":false,"name":""},"2027-06-29":{"off":false,"name":""},"2027-06-30":{"off":false,"name":""},"2027-07-01":{"off":false,"name":""},"2027-07-02":{"off":false,"name":""},"2027-07-03":{"off":true,"name":""},"2027-07-04":{"off":true,"name":""},"2027-07-05":{"off":false,"name":""},"2027-07-06":{"off":false,"name":""},"2027-07-07":{"off":false,"name":""},"2027-07-08":{"off":false,"name":""},"2027-07-09":{"off":false,"name":""},"2027-07-10":{"off":true,"name":""},"2027-07-11":{"off":true,"name":""},"2027-07-12":{"off":false,"name":""},"2027-07-13":{"off":false,"name":""},"2027-07-14":{"off":false,"name":""},"2027-07-15":{"off":false,"name":""},"2027-07-16":{"off":false,"name":""},"2027-07-17":{"off":true,"name":""},"2027-07-18":{"off":true,"name":""},"2027-07-19":{"off":false,"name":""},"2027-07-20":{"off":false,"name":""},"2027-07-21":{"off":false,"name":""},"2027-07-22":{"off":false,"name":""},"2027-07-23":{"off":false,"name":""},"2027-07-24":{"off":true,"name":""},"2027-07-25":{"off":true,"name":""},"2027-07-26":{"off":false,"name":""},"2027-07-27":{"off":false,"name":""},"2027-07-28":{"off":false,"name":""},"2027-07-29":{"off":false,"name":""},"2027-07-30":{"off":false,"name":""},"2027-07-31":{"off":true,"name":""},"2027-08-01":{"off":true,"name":""},"2027-08-02":{"off":false,"name":""},"2027-08-03":{"off":false,"name":""},"2027-08-04":{"off":false,"name":""},"2027-08-05":{"off":false,"name":""},"2027-08-06":{"off":false,"name":""},"2027-08-07":{"off":true,"name":""},"2027-08-08":{"off":true,"name":""},"2027-08-09":{"off":false,"name":""},"2027-08-10":{"off":false,"name":""},"2027-08-11":{"off":false,"name":""},"2027-08-12":{"off":false,"name":""},"2027-08-13":{"off":false,"name":""},"2027-08-14":{"off":true,"name":""},"2027-08-15":{"off":true,"name":""},"2027-08-16":{"off":false,"name":""},"2027-08-17":{"off":false,"name":""},"2027-08-18":{"off":false,"name":""},"2027-08-19":{"off":false,"name":""},"2027-08-20":{"off":false,"name":""},"2027-08-21":{"off":true,"name":""},"2027-08-22":{"off":true,"name":""},"2027-08-23":{"off":false,"name":""},"2027-08-24":{"off":false,"name":""},"2027-08-25":{"off":false,"name":""},"2027-08-26":{"off":false,"name":""},"2027-08-27":{"off":false,"name":""},"2027-08-28":{"off":true,"name":""},"2027-08-29":{"off":true,"name":""},"2027-08-30":{"off":false,"name":""},"2027-08-31":{"off":false,"name":""},"2027-09-01":{"off":false,"name":""},"2027-09-02":{"off":false,"name":""},"2027-09-03":{"off":false,"name":""},"2027-09-04":{"off":true,"name":""},"2027-09-05":{"off":true,"name":""},"2027-09-06":{"off":false,"name":""},"2027-09-07":{"off":false,"name":""},"2027-09-08":{"off":false,"name":""},"2027-09-09":{"off":false,"name":""},"2027-09-10":{"off":false,"name":""},"2027-09-11":{"off":true,"name":""},"2027-09-12":{"off":true,"name":""},"2027-09-13":{"off":false,"name":""},"2027-09-14":{"off":false,"name":""},"2027-09-15":{"off":true,"name":"中秋節"},"2027-09-16":{"off":false,"name":""},"2027-09-17":{"off":false,"name":""},"2027-09-18":{"off":true,"name":""},"2027-09-19":{"off":true,"name":""},"2027-09-20":{"off":false,"name":""},"2027-09-21":{"off":false,"name":""},"2027-09-22":{"off":false,"name":""},"2027-09-23":{"off":false,"name":""},"2027-09-24":{"off":false,"name":""},"2027-09-25":{"off":true,"name":""},"2027-09-26":{"off":true,"name":""},"2027-09-27":{"off":false,"name":""},"2027-09-28":{"off":true,"name":"孔子誕辰紀念日/教師節"},"2027-09-29":{"off":false,"name":""},"2027-09-30":{"off":false,"name":""},"2027-10-01":{"off":false,"name":""},"2027-10-02":{"off":true,"name":""},"2027-10-03":{"off":true,"name":""},"2027-10-04":{"off":false,"name":""},"2027-10-05":{"off":false,"name":""},"2027-10-06":{"off":false,"name":""},"2027-10-07":{"off":false,"name":""},"2027-10-08":{"off":false,"name":""},"2027-10-09":{"off":true,"name":""},"2027-10-10":{"off":true,"name":"國慶日"},"2027-10-11":{"off":true,"name":"補假"},"2027-10-12":{"off":false,"name":""},"2027-10-13":{"off":false,"name":""},"2027-10-14":{"off":false,"name":""},"2027-10-15":{"off":false,"name":""},"2027-10-16":{"off":true,"name":""},"2027-10-17":{"off":true,"name":""},"2027-10-18":{"off":false,"name":""},"2027-10-19":{"off":false,"name":""},"2027-10-20":{"off":false,"name":""},"2027-10-21":{"off":false,"name":""},"2027-10-22":{"off":false,"name":""},"2027-10-23":{"off":true,"name":""},"2027-10-24":{"off":true,"name":""},"2027-10-25":{"off":true,"name":"臺灣光復暨金門古寧頭大捷紀念日"},"2027-10-26":{"off":false,"name":""},"2027-10-27":{"off":false,"name":""},"2027-10-28":{"off":false,"name":""},"2027-10-29":{"off":false,"name":""},"2027-10-30":{"off":true,"name":""},"2027-10-31":{"off":true,"name":""},"2027-11-01":{"off":false,"name":""},"2027-11-02":{"off":false,"name":""},"2027-11-03":{"off":false,"name":""},"2027-11-04":{"off":false,"name":""},"2027-11-05":{"off":false,"name":""},"2027-11-06":{"off":true,"name":""},"2027-11-07":{"off":true,"name":""},"2027-11-08":{"off":false,"name":""},"2027-11-09":{"off":false,"name":""},"2027-11-10":{"off":false,"name":""},"2027-11-11":{"off":false,"name":""},"2027-11-12":{"off":false,"name":""},"2027-11-13":{"off":true,"name":""},"2027-11-14":{"off":true,"name":""},"2027-11-15":{"off":false,"name":""},"2027-11-16":{"off":false,"name":""},"2027-11-17":{"off":false,"name":""},"2027-11-18":{"off":false,"name":""},"2027-11-19":{"off":false,"name":""},"2027-11-20":{"off":true,"name":""},"2027-11-21":{"off":true,"name":""},"2027-11-22":{"off":false,"name":""},"2027-11-23":{"off":false,"name":""},"2027-11-24":{"off":false,"name":""},"2027-11-25":{"off":false,"name":""},"2027-11-26":{"off":false,"name":""},"2027-11-27":{"off":true,"name":""},"2027-11-28":{"off":true,"name":""},"2027-11-29":{"off":false,"name":""},"2027-11-30":{"off":false,"name":""},"2027-12-01":{"off":false,"name":""},"2027-12-02":{"off":false,"name":""},"2027-12-03":{"off":false,"name":""},"2027-12-04":{"off":true,"name":""},"2027-12-05":{"off":true,"name":""},"2027-12-06":{"off":false,"name":""},"2027-12-07":{"off":false,"name":""},"2027-12-08":{"off":false,"name":""},"2027-12-09":{"off":false,"name":""},"2027-12-10":{"off":false,"name":""},"2027-12-11":{"off":true,"name":""},"2027-12-12":{"off":true,"name":""},"2027-12-13":{"off":false,"name":""},"2027-12-14":{"off":false,"name":""},"2027-12-15":{"off":false,"name":""},"2027-12-16":{"off":false,"name":""},"2027-12-17":{"off":false,"name":""},"2027-12-18":{"off":true,"name":""},"2027-12-19":{"off":true,"name":""},"2027-12-20":{"off":false,"name":""},"2027-12-21":{"off":false,"name":""},"2027-12-22":{"off":false,"name":""},"2027-12-23":{"off":false,"name":""},"2027-12-24":{"off":true,"name":"補假"},"2027-12-25":{"off":true,"name":"行憲紀念日"},"2027-12-26":{"off":true,"name":""},"2027-12-27":{"off":false,"name":""},"2027-12-28":{"off":false,"name":""},"2027-12-29":{"off":false,"name":""},"2027-12-30":{"off":false,"name":""},"2027-12-31":{"off":true,"name":"補假"}};
+
+'use strict';
+const Model=(()=>{
+ const lists=['community','category','folder','person','vendor','owner','stage','priority'];
+ const labels={community:'所屬社區',category:'分類',folder:'資料夾',person:'主要聯繫人',vendor:'廠商',owner:'負責人',stage:'處理階段',priority:'優先級'};
+ const colors={紅:'#b33146',黃:'#916400',綠:'#267754',藍:'#2868a8',紫:'#8650a2',灰:'#687580'};
+ const googleColors={紅:'11',黃:'5',綠:'10',藍:'9',紫:'3',灰:'8'};
+ const dateKey=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+ const today=()=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+ const uid=()=>globalThis.crypto?.randomUUID?.()||Date.now().toString(36)+Math.random().toString(36).slice(2);
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const validDate=v=>typeof v==='string'&&(!v||(/^\d{4}-\d{2}-\d{2}$/.test(v)&&Number(v.slice(0,4))>=100&&dateKey(new Date(v+'T12:00:00Z'))===v));
+ const validTime=v=>typeof v==='string'&&(!v||/^([01]\d|2[0-3]):[0-5]\d$/.test(v));
+ function fresh(){return {version:2,tasks:[],lists:Object.fromEntries(lists.map(k=>[k,[]])),calendar:{clientId:'',selected:[],target:'',auto:true},remote:{account:'',calendars:[],events:[],lastSync:''}}}
+ function reminder(t){if(t.reminderDefault)return null;if(!['string','number'].includes(typeof t.reminderValue)&&t.reminderValue!==null)throw Error('通知數量格式不正確。');if(t.reminderValue===''||t.reminderValue===null)return null;const factor={分鐘:1,小時:60,天:1440}[t.reminderUnit];const n=Number(t.reminderValue)*factor;if(!Number.isInteger(n)||n<0||n>40320)throw Error('提前通知須為 0～28 天內的整數分鐘。');return n}
+ function blank(){return {id:uid(),title:'',...Object.fromEntries(lists.map(k=>[k,''])),contact:'',startDate:'',startTime:'',endDate:'',endTime:'',allDay:false,reminderValue:'',reminderUnit:'分鐘',reminderDefault:false,color:'藍',notes:'',next:'',cost:'',completed:false,updated:new Date().toISOString(),g:null}}
+ function task(raw){
+  if(!raw||typeof raw!=='object'||Array.isArray(raw))throw Error('任務格式不正確。');
+  const t={...blank(),...raw};
+  for(const k of ['id','title',...lists,'contact','startDate','startTime','endDate','endTime','color','notes','next','cost','updated','reminderUnit']){
+   if(typeof t[k]!=='string'||t[k].length>(k==='notes'?20000:500))throw Error('任務欄位格式錯誤：'+k);
+  }
+  if(!t.id||!t.title.trim()||t.title.length>160||!Object.hasOwn(colors,t.color)||typeof t.completed!=='boolean'||typeof t.allDay!=='boolean'||typeof t.reminderDefault!=='boolean'||!Number.isFinite(Date.parse(t.updated)))throw Error('任務內容格式錯誤。');
+  for(const k of ['startDate','endDate','next'])if(!validDate(t[k]))throw Error('日期不正確。');
+  for(const k of ['startTime','endTime'])if(!validTime(t[k]))throw Error('時間不正確。');
+  if((t.startTime&&!t.startDate)||(t.endTime&&!t.endDate))throw Error('填時間時，請一併填寫日期。');
+  if(t.startDate&&t.endDate){
+   if(t.allDay?t.endDate<t.startDate:(t.endDate+'T'+(t.endTime||'23:59'))<(t.startDate+'T'+(t.startTime||'00:00')))throw Error('結束日期時間不可早於開始日期時間。');
+  }
+  if(!['分鐘','小時','天'].includes(t.reminderUnit))throw Error('通知單位不正確。');
+  reminder(t);
+  if(t.cost!==''&&(!Number.isFinite(Number(t.cost))||Number(t.cost)<0))throw Error('費用須為非負數。');
+  if(t.g!==null){
+   if(!t.g||typeof t.g!=='object'||typeof t.g.calendarId!=='string'||typeof t.g.eventId!=='string'||typeof t.g.account!=='string'||typeof t.g.etag!=='string'||typeof t.g.dirty!=='boolean')throw Error('Google 關聯資料不正確。');
+   t.g={calendarId:t.g.calendarId,eventId:t.g.eventId,account:t.g.account,etag:t.g.etag,dirty:t.g.dirty,conflict:!!t.g.conflict,removed:!!t.g.removed,htmlLink:typeof t.g.htmlLink==='string'?t.g.htmlLink:''};
+  }
+  return Object.fromEntries([...Object.keys(blank())].map(k=>[k,t[k]]));
+ }
+ function validate(input){
+  if(!input||input.version!==2||!Array.isArray(input.tasks)||input.tasks.length>10000)throw Error('備份格式錯誤或超過 10,000 筆。');
+  const out=fresh(),ids=new Set();out.tasks=input.tasks.map(task);
+  for(const t of out.tasks){if(ids.has(t.id))throw Error('任務 ID 重複。');ids.add(t.id)}
+  for(const k of lists){
+   const names=input.lists?.[k];if(!Array.isArray(names)||names.length>2000||names.some(n=>typeof n!=='string'||!n.trim()||n.length>160))throw Error('清單格式錯誤：'+labels[k]);
+   out.lists[k]=[...new Set([...names,...out.tasks.map(t=>t[k]).filter(Boolean)])];
+  }
+  const g=input.calendar||{};
+  if(typeof g.clientId!=='string'||!Array.isArray(g.selected)||g.selected.some(s=>typeof s!=='string')||typeof g.target!=='string')throw Error('Google 設定格式不正確。');
+  out.calendar={clientId:g.clientId,selected:[...new Set(g.selected)],target:g.target,auto:g.auto!==false,rangeStart:typeof g.rangeStart==='string'&&validDate(g.rangeStart)?g.rangeStart:'',rangeEnd:typeof g.rangeEnd==='string'&&validDate(g.rangeEnd)?g.rangeEnd:''};
+  // Google 快取不納入可還原的權限或授權；每次連線後重讀。
+  out.remote={...fresh().remote,...(input.remote||{})};
+  if(typeof out.remote.account!=='string'||!Array.isArray(out.remote.calendars)||!Array.isArray(out.remote.events)||typeof out.remote.lastSync!=='string')throw Error('行事曆快取格式不正確。');
+  return out;
+ }
+ function migrate(old){
+  if(!Array.isArray(old))throw Error('舊版資料格式錯誤。');
+  const state=fresh();
+  state.tasks=old.map(r=>task({...blank(),id:String(r.id),title:r.title,community:r.community||'',category:r.category||'',person:r.owner||'',owner:r.owner||'',vendor:r.vendor||'',contact:r.contact||'',stage:r.status||'',priority:r.priority||'',endDate:r.due||'',notes:r.notes||'',next:r.next||'',cost:r.cost||'',completed:r.status==='已完成',updated:r.updated||new Date().toISOString(),color:r.community==='厚禮'?'綠':r.community==='區權會'?'紅':r.community==='玉京名廈'?'灰':'藍'}));
+  for(const k of lists)state.lists[k]=[...new Set(state.tasks.map(t=>t[k]).filter(Boolean))];
+  return validate(state);
+ }
+ const endMs=t=>t.endDate?new Date(t.endDate+'T'+(t.allDay?'23:59:59':t.endTime||'23:59:59')+'+08:00').getTime():Infinity;
+ const overdue=(t,now=Date.now())=>!t.completed&&endMs(t)<now;
+ const dueToday=t=>!t.completed&&t.endDate===today();
+ function matches(t,f={}){
+  const query=(f.search||'').toLocaleLowerCase();
+  return (!query||[t.title,t.notes,t.contact,...lists.map(k=>t[k])].join(' ').toLocaleLowerCase().includes(query))&&lists.every(k=>!f[k]||t[k]===f[k])&&(!f.color||t.color===f.color)&&
+   (!f.bucket||(f.bucket==='completed'?t.completed:f.bucket==='pending'?!t.completed:f.bucket==='overdue'?overdue(t):dueToday(t)));
+ }
+ function ordered(tasks){return [...tasks].sort((a,b)=>Number(a.completed)-Number(b.completed)||Number(overdue(b))-Number(overdue(a))||endMs(a)-endMs(b)||b.updated.localeCompare(a.updated))}
+ function onDate(t,date){return (t.startDate||t.endDate||'9999')<=date&&(t.endDate||t.startDate||'0000')>=date}
+ function rename(state,k,from,to){
+  if(!lists.includes(k)||!to.trim()||to.length>160)throw Error('請填寫有效名稱。');
+  if(from!==to&&state.lists[k].includes(to))throw Error('名稱已存在。');
+  state.lists[k]=state.lists[k].map(n=>n===from?to:n);
+  state.tasks=state.tasks.map(t=>t[k]===from?{...t,[k]:to,updated:new Date().toISOString()}:t);
+ }
+ function removeList(state,k,name){if(state.tasks.some(t=>t[k]===name))throw Error('仍有任務使用此名稱，請先改到其他項目再刪除。');state.lists[k]=state.lists[k].filter(n=>n!==name)}
+ function addDay(date){const d=new Date(date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+1);return d.toISOString().slice(0,10)}
+ function eventPayload(t,appId){
+  if(!t.startDate||!t.endDate)throw Error('加入 Google 前，請填開始及結束日期。');
+  const n=reminder(t),data={summary:t.title,description:t.notes,colorId:googleColors[t.color],extendedProperties:{private:{taskApp:appId,taskId:t.id}},reminders:t.reminderDefault?{useDefault:true}:{useDefault:false,overrides:n===null?[]:[{method:'popup',minutes:n}]}};
+  if(t.allDay){data.start={date:t.startDate};data.end={date:addDay(t.endDate)}}
+  else{
+   if(!t.startTime||!t.endTime)throw Error('請填開始及結束時間，或勾選全天。');
+   if(t.endDate+'T'+t.endTime<=t.startDate+'T'+t.startTime)throw Error('Google 事件的結束時間必須晚於開始時間。');
+   data.start={dateTime:t.startDate+'T'+t.startTime+':00+08:00',timeZone:'Asia/Taipei'};
+   data.end={dateTime:t.endDate+'T'+t.endTime+':00+08:00',timeZone:'Asia/Taipei'};
+  }
+  return data;
+ }
+ function parts(value){const f=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(value));return {date:f.slice(0,10),time:f.slice(11,16)}}
+ function eventFields(event){
+  if(!event.start||!event.end)throw Error('事件未提供可用日期。');
+  const allDay=!!event.start.date;
+  const start=allDay?{date:event.start.date,time:''}:parts(event.start.dateTime);
+  let end;
+  if(allDay){const d=new Date(event.end.date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()-1);end={date:d.toISOString().slice(0,10),time:''}}
+  else end=parts(event.end.dateTime);
+  const c=Object.keys(googleColors).find(k=>googleColors[k]===event.colorId)||'藍';
+  const reminders=event.reminders?.overrides||[];
+  const n=reminders.length?Math.min(...reminders.map(r=>r.minutes)):'';
+  return {title:(event.summary||'（無標題）').slice(0,160),notes:event.description||'',startDate:start.date,startTime:start.time,endDate:end.date,endTime:end.time,allDay,color:c,reminderValue:n,reminderUnit:'分鐘',reminderDefault:!!event.reminders?.useDefault};
+ }
+ return {lists,labels,colors,googleColors,dateKey,today,uid,esc,validDate,validTime,fresh,blank,task,validate,migrate,reminder,endMs,overdue,dueToday,matches,ordered,onDate,rename,removeList,eventPayload,eventFields,addDay};
+})();
+if(typeof module!=='undefined')module.exports=Model;
+
+
+
+'use strict';
+class GoogleBridge {
+ constructor(read,write,notify){this.read=read;this.write=write;this.notify=notify;this.token='';this.expires=0;this.busy=false}
+ active(){return !!this.token&&Date.now()<this.expires}
+ assert(){if(!this.active())throw Error('請先按「連結 Gmail／Google 行事曆」完成授權。')}
+ async api(path,{method='GET',body,etag}={}){
+  this.assert();
+  const headers={Authorization:'Bearer '+this.token};if(body)headers['Content-Type']='application/json';if(etag)headers['If-Match']=etag;
+  let response;try{response=await fetch('https://www.googleapis.com/calendar/v3/'+path,{method,headers,body:body?JSON.stringify(body):undefined})}catch{throw Error('無法連線 Google，請檢查網路。')}
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok){
+   const err=Error(response.status===401?'Google 授權已過期，請重新連結。':response.status===412?'Google 事件已被其他地方修改；請先採用 Google 版本，再重新編輯。':response.status===403?'Google 不允許此操作：請檢查日曆讀寫權限、API 啟用狀態與測試使用者設定。':response.status===404?'找不到此行事曆／事件，或沒有存取權限。':(data.error?.message||'Google 請求失敗（'+response.status+'）'));
+   err.status=response.status;if(response.status===401){this.token='';this.expires=0}throw err;
+  }
+  return data;
+ }
+ async pages(path,params={}){
+  let all=[],pageToken='';
+  do{
+   const query=new URLSearchParams({...params,maxResults:'250',...(pageToken?{pageToken}:{})});
+   const page=await this.api(path+'?'+query.toString());all.push(...(page.items||[]));pageToken=page.nextPageToken||'';
+   if(all.length>10000)throw Error('行事曆超過 10,000 筆，請縮短同步日期範圍。');
+  }while(pageToken);
+  return all;
+ }
+ async authorize(clientId){
+  if(!/^[\w.-]+\.apps\.googleusercontent\.com$/.test(clientId))throw Error('請先在設定填寫有效的 Google OAuth 用戶端 ID。');
+  if(location.protocol==='file:')throw Error('Google 連線需由 HTTPS 網址或 localhost 開啟；本機 HTML 仍可用待辦功能。');
+  if(!globalThis.google?.accounts?.oauth2)throw Error('Google 登入元件尚未載入，請檢查網路或稍後再試。');
+  const scope='https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar.calendarlist';
+  await new Promise((resolve,reject)=>{
+   const client=google.accounts.oauth2.initTokenClient({client_id:clientId,scope,callback:r=>{
+    if(r.error||!r.access_token){reject(Error('未完成 Google 授權：'+(r.error||'沒有權杖')));return}
+    if(!google.accounts.oauth2.hasGrantedAllScopes(r,...scope.split(' '))){reject(Error('請同意行事曆讀寫及清單權限，才能使用此功能。'));return}
+    this.token=r.access_token;this.expires=Date.now()+Number(r.expires_in||3600)*1000-30000;resolve();
+   },error_callback:e=>reject(Error(e.type==='popup_closed'?'你已關閉授權視窗。':'無法開啟 Google 授權，請允許登入彈出視窗。'))});
+   client.requestAccessToken({prompt:'select_account'});
+  });
+  await this.refreshCalendars();await this.sync();
+ }
+ disconnect(){this.token='';this.expires=0;this.notify('已中斷此 APP 的連線；本機任務保留。')}
+ async revoke(){
+  const token=this.token;
+  if(token&&globalThis.google?.accounts?.oauth2)await new Promise(resolve=>google.accounts.oauth2.revoke(token,resolve));
+  this.disconnect();
+ }
+ async refreshCalendars(){
+  const calendars=(await this.pages('users/me/calendarList',{showHidden:'false'})).map(c=>({id:c.id,name:c.summaryOverride||c.summary||c.id,accessRole:c.accessRole,primary:!!c.primary,selected:!!c.selected,color:c.backgroundColor||''}));
+  const primary=calendars.find(c=>c.primary);if(!primary)throw Error('無法辨識你的 Google 主要行事曆。');
+  const before=this.read(),same=before.remote.account===primary.id,known=new Set(same?before.remote.calendars.map(c=>c.id):[]);
+  this.write(s=>{
+   s.remote.account=primary.id;s.remote.calendars=calendars;
+   if(!same){s.remote.events=[];s.remote.lastSync='';s.calendar.selected=calendars.filter(c=>c.selected||c.primary).map(c=>c.id);s.calendar.target=primary.id}
+   else s.calendar.selected=[...new Set([...s.calendar.selected.filter(id=>calendars.some(c=>c.id===id)),...calendars.filter(c=>!known.has(c.id)&&c.selected).map(c=>c.id)])];
+   const writable=calendars.filter(c=>['owner','writer'].includes(c.accessRole));
+   if(!writable.some(c=>c.id===s.calendar.target))s.calendar.target=writable[0]?.id||'';
+  });
+ }
+ range(){
+  const y=Number(Model.today().slice(0,4)),c=this.read().calendar;
+  return {from:c.rangeStart||y+'-01-01',to:c.rangeEnd||(y+1)+'-12-31'};
+ }
+ async sync(){
+  this.assert();if(this.busy)throw Error('同步正在進行，請稍候。');this.busy=true;this.notify('正在讀取 Google 行事曆…');
+  try{
+   await this.refreshCalendars();
+   const s=this.read(),range=this.range(),account=s.remote.account;
+   const events=[];
+   for(const id of s.calendar.selected){
+    const cal=s.remote.calendars.find(c=>c.id===id);
+    if(!cal||cal.accessRole==='freeBusyReader')continue;
+    const rows=await this.pages('calendars/'+encodeURIComponent(id)+'/events',{singleEvents:'true',showDeleted:'false',timeMin:range.from+'T00:00:00+08:00',timeMax:Model.addDay(range.to)+'T00:00:00+08:00',timeZone:'Asia/Taipei',orderBy:'startTime'});
+    events.push(...rows.filter(e=>e.status!=='cancelled'&&e.start&&e.end).map(e=>({calendarId:id,event:e})));
+   }
+   // 關聯任務另以 ID 讀取，避免日期移出同步範圍被誤判為刪除。
+   const linked=[];
+   for(const t of s.tasks.filter(t=>t.g&&t.g.account===account)){
+    try{
+     const event=await this.api('calendars/'+encodeURIComponent(t.g.calendarId)+'/events/'+encodeURIComponent(t.g.eventId));
+     linked.push({id:t.id,event});
+    }catch(e){if(e.status===404||e.status===410)linked.push({id:t.id,event:null});else throw e}
+   }
+   this.write(next=>{
+    next.remote.events=events;next.remote.lastSync=new Date().toISOString();
+    for(const row of linked){
+     const t=next.tasks.find(t=>t.id===row.id);if(!t?.g)continue;
+     if(!row.event||row.event.status==='cancelled'){t.g.removed=true;t.g.conflict=true;continue}
+     if(t.g.dirty){if(t.g.etag!==row.event.etag)t.g.conflict=true;continue}
+     Object.assign(t,Model.eventFields(row.event));t.g.etag=row.event.etag||'';t.g.conflict=false;t.g.removed=false;t.updated=new Date().toISOString();
+    }
+   });
+   this.notify('Google 讀取完成：'+events.length+' 筆（'+range.from+'～'+range.to+'）。');
+  }finally{this.busy=false}
+ }
+ async subscribe(id){
+  if(!id.trim())throw Error('請填寫對方分享的行事曆 ID。');
+  await this.api('users/me/calendarList',{method:'POST',body:{id:id.trim(),selected:true}});
+  await this.refreshCalendars();this.write(s=>{s.calendar.selected=[...new Set([...s.calendar.selected,id.trim()])]});await this.sync();
+ }
+ async push(id){
+  this.assert();if(this.busy)throw Error('同步正在進行，請稍候。');this.busy=true;
+  try{
+   let s=this.read(),t=s.tasks.find(t=>t.id===id);if(!t)throw Error('找不到任務。');
+   const payload=Model.eventPayload(t,APP.id),calId=t.g?.calendarId||s.calendar.target,account=s.remote.account,stamp=t.updated;
+   if(t.g&&t.g.account!==account)throw Error('這筆任務屬於另一個 Google 帳號，請切換回原帳號。');
+   if(t.g?.removed)throw Error('Google 原事件已刪除；請先解除此任務的關聯後再新增。');
+   if(t.g?.conflict)throw Error('Google 與本機都有修改。請先按「採用 Google 版本」。本機內容可先備份保留。');
+   const cal=s.remote.calendars.find(c=>c.id===calId);if(!cal||!['owner','writer'].includes(cal.accessRole))throw Error('請先選擇具有編輯權限的目標行事曆。');
+   let event,recovered=false;
+   const base='calendars/'+encodeURIComponent(calId)+'/events';
+   if(t.g){
+    if(!t.g.etag)throw Error('缺少 Google 事件版本，請先讀取同步。');
+    const current=await this.api(base+'/'+encodeURIComponent(t.g.eventId));
+    if(current.etag!==t.g.etag){this.write(n=>{const r=n.tasks.find(r=>r.id===id);if(r?.g)r.g.conflict=true});throw Error('Google 已有更新，請先採用 Google 版本。')}
+    const body={...payload,extendedProperties:{...current.extendedProperties,private:{...current.extendedProperties?.private,...payload.extendedProperties.private}}};
+    event=await this.api(base+'/'+encodeURIComponent(t.g.eventId),{method:'PATCH',body,etag:t.g.etag});
+   }else{
+    // 可重試的固定 ID 可避免斷線重試建立重複事件。
+    const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(APP.id+':'+account+':'+t.id));
+    const hex=Array.from(new Uint8Array(digest)).map(n=>n.toString(16).padStart(2,'0')).join('');
+    payload.id='a'+hex;
+    try{event=await this.api(base,{method:'POST',body:payload})}
+    catch(e){if(e.status!==409)throw e;recovered=true;event=await this.api(base+'/'+payload.id);if(event.extendedProperties?.private?.taskId!==t.id)throw Error('Google 事件識別碼衝突。')}
+   }
+   this.write(n=>{const r=n.tasks.find(r=>r.id===id);if(r)r.g={calendarId:calId,eventId:event.id,account,etag:event.etag||'',dirty:recovered||r.updated!==stamp,conflict:false,removed:false,htmlLink:event.htmlLink||''}});
+   this.notify('已直接'+(t.g?'更新':'新增')+'至 Google 行事曆，未使用 ICS。');
+  }finally{this.busy=false}
+ }
+ async adopt(id){
+  this.assert();const t=this.read().tasks.find(t=>t.id===id);if(!t?.g)throw Error('尚未關聯 Google 事件。');
+  if(t.g.account!==this.read().remote.account)throw Error('請連結原 Google 帳號。');
+  const e=await this.api('calendars/'+encodeURIComponent(t.g.calendarId)+'/events/'+encodeURIComponent(t.g.eventId));
+  if(e.status==='cancelled')throw Error('Google 事件已取消，請解除關聯。');
+  this.write(n=>{const r=n.tasks.find(t=>t.id===id);if(r?.g){Object.assign(r,Model.eventFields(e));r.g.etag=e.etag||'';r.g.dirty=false;r.g.conflict=false;r.g.removed=false;r.updated=new Date().toISOString()}});
+  this.notify('已採用 Google 版本，分類、資料夾、聯繫人保留。');
+ }
+ importEvent(calendarId,eventId){
+  const s=this.read(),entry=s.remote.events.find(r=>r.calendarId===calendarId&&r.event.id===eventId);
+  if(!entry)throw Error('找不到快取事件，請重新讀取。');
+  if(s.tasks.some(t=>t.g?.calendarId===calendarId&&t.g?.eventId===eventId&&t.g?.account===s.remote.account))throw Error('此 Google 事件已經是待辦任務。');
+  const t=Model.task({...Model.blank(),...Model.eventFields(entry.event),g:{calendarId,eventId,account:s.remote.account,etag:entry.event.etag||'',dirty:false,conflict:false,removed:false,htmlLink:entry.event.htmlLink||''}});
+  this.write(n=>n.tasks.push(t));this.notify('已加入本機待辦；可自行補上分類、資料夾與聯繫人。');
+ }
+}
+if(typeof module!=='undefined')module.exports=GoogleBridge;
+
+
+
+'use strict';
+const $=s=>document.querySelector(s),E=Model.esc;
+const storageKey='tw-app-'+APP.id+'-v2',oldKey='tw-app-'+APP.id+'-v1';
+let state=Model.fresh(),blocked=false,view='list',filters={},month=Model.today().slice(0,7),selected='',editId=null,editStamp='',toastTimer;
+function toast(s){$('#toast').textContent=s;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').textContent='',7000)}
+function load(){
+ try{
+  const raw=localStorage.getItem(storageKey),old=localStorage.getItem(oldKey);
+  state=raw?Model.validate(JSON.parse(raw)):old?Model.migrate(JSON.parse(old)):Model.fresh();blocked=false;
+ }catch(e){blocked=true;$('#storage-warning').hidden=false;$('#storage-warning').textContent='本機資料讀取失敗，尚未覆寫原檔。請從備份頁匯出原始資料，再檢查瀏覽器儲存權限。';toast(e.message)}
+}
+function write(fn){
+ if(blocked)throw Error('資料讀取失敗，目前禁止覆寫。請先匯出原始資料。');
+ const raw=localStorage.getItem(storageKey),draft=raw?Model.validate(JSON.parse(raw)):structuredClone(state);
+ fn(draft);const valid=Model.validate(draft);
+ localStorage.setItem(storageKey,JSON.stringify(valid));state=valid;render();
+}
+function run(fn){Promise.resolve().then(fn).catch(e=>toast(e.message))}
+const bridge=new GoogleBridge(()=>state,write,toast);
+function safeLink(url){try{const u=new URL(url);return u.protocol==='https:'&&(u.hostname==='calendar.google.com'||u.hostname==='www.google.com')?u.href:''}catch{return ''}}
+function exportJSON(value,name){const u=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}
+function backup(){if(blocked)throw Error('請改用匯出原始資料。');load();if(blocked)return;const copy=structuredClone(state);copy.remote=Model.fresh().remote;exportJSON({app:APP.id,version:2,state:copy},APP.id+'-v2-'+Model.today()+'.json')}
+function setView(v){view=v;selected='';render();window.scrollTo({top:0,behavior:'auto'})}
+function rows(){return Model.ordered(state.tasks.filter(t=>Model.matches(t,filters)))}
+function options(values,placeholder,current=''){return '<option value="">'+E(placeholder)+'</option>'+values.map(v=>'<option value="'+E(v)+'" '+(v===current?'selected':'')+'>'+E(v)+'</option>').join('')}
+function filterStrip(){
+ const out=$('#filters');out.hidden=!['list','calendar'].includes(view);if(out.hidden)return;
+ out.innerHTML='<label class="sr-only" for="search">搜尋任務</label><input id="search" type="search" value="'+E(filters.search||'')+'" placeholder="搜尋標題、聯繫人、追蹤進度…" maxlength="160">'+
+ (APP.community?'<select data-filter="community" aria-label="依社區篩選">'+options(state.lists.community,'全部社區',filters.community)+'</select>':'')+
+ ['category','folder','person'].map(k=>'<select data-filter="'+k+'" aria-label="依'+Model.labels[k]+'篩選">'+options(state.lists[k],'全部'+Model.labels[k],filters[k])+'</select>').join('')+
+ '<select data-filter="color" aria-label="依標題顏色篩選">'+options(Object.keys(Model.colors),'全部顏色',filters.color)+'</select><button data-act="clear">清除篩選</button>';
+}
+function buckets(){
+ const list=state.tasks.filter(t=>Model.matches(t,{...filters,bucket:''}));
+ const defs=[['completed','已完成',list.filter(t=>t.completed).length],['pending','未完成',list.filter(t=>!t.completed).length],['overdue','超期任務',list.filter(t=>Model.overdue(t)).length],['due','已到期',list.filter(Model.dueToday).length]];
+ $('#stats').innerHTML=defs.map(([k,l,n])=>'<button class="stat '+(filters.bucket===k?'active':'')+'" data-bucket="'+k+'" aria-pressed="'+(filters.bucket===k)+'"><span>'+l+'</span><strong>'+n+'</strong><small>點選查看任務明細</small></button>').join('');
+}
+function taskCard(t){
+ const fields=[...(APP.community&&t.community?[['社區',t.community,'community']]:[]),['分類',t.category,'category'],['資料夾',t.folder,'folder'],['主要聯繫人',t.person,'person'],['處理階段',t.stage,'stage'],['優先級',t.priority,'priority']].filter(a=>a[1]);
+ const badges=fields.map(([label,value,key])=>'<button class="badge tag" data-pick="'+key+'" data-value="'+E(value)+'">'+E(label)+' · '+E(value)+'</button>').join('');
+ const dates=(t.startDate?'開始 '+t.startDate+(t.allDay?' 全天':t.startTime?' '+t.startTime:''):'未設開始')+' → '+(t.endDate?'結束 '+t.endDate+(t.allDay?' 全天':t.endTime?' '+t.endTime:''):'未設結束');
+ const reminder=Model.reminder(t);
+ const g=t.g;
+ const sync=g?(g.conflict?'同步衝突，請選擇版本':g.dirty?'本機已修改，待送出':'已關聯 Google'):'尚未加入 Google';
+ const details=[t.contact&&'聯絡方式：'+t.contact,t.owner&&'負責人：'+t.owner,t.vendor&&'廠商：'+t.vendor,t.cost!==''&&'費用：NT$ '+Number(t.cost).toLocaleString('zh-TW'),t.next&&'下次保養：'+t.next].filter(Boolean).join(' ／ ');
+ return '<article class="record '+(t.completed?'done':'')+'" style="--record-color:'+Model.colors[t.color]+'"><button class="check '+(t.completed?'done':'')+'" data-act="toggle" data-id="'+E(t.id)+'" aria-label="'+(t.completed?'標為未完成：':'標為完成：')+E(t.title)+'" aria-pressed="'+t.completed+'">'+(t.completed?'✓':'')+'</button><div class="record-body"><h3 style="color:'+Model.colors[t.color]+'">'+E(t.title)+'</h3><div class="meta">'+badges+'<span class="badge '+(Model.overdue(t)?'overdue':'')+'">'+(t.completed?'已完成':Model.overdue(t)?'超期任務':'未完成')+'</span><span>'+E(t.color)+'色</span></div><p class="dates">'+E(dates)+'（臺北時間）</p><p class="note">提前通知：'+(t.reminderDefault?'沿用 Google 日曆預設提醒':reminder===null?'不通知':E(t.reminderValue)+' '+E(t.reminderUnit)+'前')+' · '+E(sync)+'</p>'+(details?'<p>'+E(details)+'</p>':'')+(t.notes?'<div class="tracking"><b>追蹤進度／內容</b><p>'+E(t.notes)+'</p></div>':'')+'<div class="row-actions"><button data-act="edit" data-id="'+E(t.id)+'">編輯</button><button data-act="push" data-id="'+E(t.id)+'">'+(g?'更新 Google 行事曆':'一鍵加入 Google 行事曆')+'</button>'+(g?'<button data-act="adopt" data-id="'+E(t.id)+'">採用 Google 版本</button><button data-act="unlink" data-id="'+E(t.id)+'">解除關聯</button>':'')+'<button class="danger quiet" data-act="delete" data-id="'+E(t.id)+'">刪除本機</button>'+(t.next?'<button data-act="next" data-id="'+E(t.id)+'">建立下次保養</button>':'')+'</div></div></article>';
+}
+function render(skipFilters=false){
+ $('#nav').innerHTML=[['list','▤　任務總覽'],['calendar','▦　行事曆'],['lists','☷　手動清單管理'],['google','G　Gmail 行事曆'],['backup','⇅　備份與說明']].map(([k,l])=>'<button data-view="'+k+'" class="'+(view===k?'active':'')+'" '+(view===k?'aria-current="page"':'')+'>'+l+'</button>').join('');
+ $('#legend-title').textContent=APP.community?'點社區看任務':'點資料夾看任務';
+ const lk=APP.community?'community':'folder';
+ $('#legend').innerHTML=state.lists[lk].map((n,i)=>'<button class="legend-button" data-pick="'+lk+'" data-value="'+E(n)+'"><span class="dot" style="background:'+(APP.community?({'國聚之碩':'#285f98','玉京名廈':'#737b85','厚禮':'#368169','區權會':'#b94350'}[n]||'var(--brand)'):'var(--brand)')+'"></span>'+E(n)+' <small>'+state.tasks.filter(t=>t[lk]===n).length+'</small></button>').join('')||'<p class="note">先到「手動清單管理」新增名稱。</p>';
+ $('#google-indicator').textContent=bridge.active()?'Google 已授權':'Google 未連線';
+ buckets();if(!skipFilters)filterStrip();
+ const title={list:'任務總覽',calendar:'行事曆',lists:'手動清單管理',google:'Gmail／Google 行事曆',backup:'備份與使用說明'}[view];
+ $('#view-title').textContent=title+(filters.bucket&&['list','calendar'].includes(view)?' · '+({completed:'已完成',pending:'未完成',overdue:'超期任務',due:'已到期'}[filters.bucket]):'');
+ const filtered=rows();
+ if(view==='list'){
+  $('#count').textContent=filtered.length+' 項';
+  $('#content').innerHTML=(APP.community?'<div class="community-strip">'+state.lists.community.map(n=>'<button data-pick="community" data-value="'+E(n)+'" class="'+(filters.community===n?'primary':'')+'">'+E(n)+' · '+state.tasks.filter(t=>t.community===n).length+'</button>').join('')+'</div>':'')+(filtered.length?filtered.map(taskCard).join(''):'<div class="empty"><b>目前沒有符合條件的任務</b>新增任務，或清除篩選後查看。</div>');
+ }else if(view==='calendar')calendarPage(filtered);
+ else{ $('#count').textContent='';if(view==='lists')listsPage();if(view==='google')googlePage();if(view==='backup')backupPage();}
+ $('#filter-summary').textContent=Object.entries(filters).filter(([k,v])=>v&&k!=='search').map(([k,v])=>(Model.labels[k]||({bucket:'狀態',color:'標題色'}[k])||k)+'：'+({completed:'已完成',pending:'未完成',overdue:'超期任務',due:'已到期'}[v]||v)).join(' ／ ');
+}
+function calendarPage(tasks){
+ const [y,m]=month.split('-').map(Number),days=new Date(y,m,0).getDate(),first=new Date(y,m-1,1).getDay();
+ let html='<section class="panel"><div class="month-head"><button data-month="-1" aria-label="上個月">←</button><h2>'+y+' 年 '+m+' 月</h2><div><button data-month="today">本月</button> <button data-month="1" aria-label="下個月">→</button></div></div><div class="calendar">'+['日','一','二','三','四','五','六'].map((d,i)=>'<div class="weekday '+(i===0||i===6?'weekend':'')+'">'+d+'</div>').join('')+'<div class="day blank"></div>'.repeat(first);
+ for(let d=1;d<=days;d++){
+  const date=month+'-'+String(d).padStart(2,'0'),day=new Date(date+'T12:00:00').getDay(),holiday=HOLIDAYS[date],weekend=day===0||day===6,daily=tasks.filter(t=>Model.onDate(t,date)),remote=visibleRemote().filter(r=>eventOnDate(r.event,date));
+  html+='<button class="day '+(weekend?'weekend ':'')+(holiday?.off?'holiday ':'')+(date===Model.today()?'today ':'')+(date===selected?'selected':'')+'" data-date="'+date+'" aria-label="'+date+(weekend?' 週末':'')+' '+E(holiday?.name||'')+' '+daily.length+' 項任務、'+remote.length+' 項 Google 行程"><span>'+d+'</span>'+(holiday?.name?'<small class="holiday-name">'+E(holiday.name)+'</small>':weekend?'<small>週末</small>':'')+daily.slice(0,2).map(t=>'<small style="color:'+Model.colors[t.color]+'">• '+E(t.title)+'</small>').join('')+(remote.length?'<small>G '+remote.length+' 項行程</small>':'')+(daily.length>2?'<small>另 '+(daily.length-2)+' 項任務</small>':'')+'</button>';
+ }
+ html+='</div><p class="note">2026、2027 假日依人事行政總處辦公日曆表；週末另以底色標示。跨日任務依起迄日期顯示。'+(![2026,2027].includes(y)?'本年度未內建假日資料，僅顯示週末。':'')+'</p></section>';
+ const dated=tasks.filter(t=>selected?Model.onDate(t,selected):Model.onDate(t,month+'-01')||(t.startDate||t.endDate||'').slice(0,7)===month||(t.endDate||'').slice(0,7)===month);
+ $('#count').textContent=dated.length+' 項任務';
+ html+='<div class="toolbar"><h2>'+E(selected||month)+' 的安排</h2><button class="primary" data-act="new-date">＋ 新增任務</button></div>'+dated.map(taskCard).join('');
+ const remote=visibleRemote().filter(r=>selected?eventOnDate(r.event,selected):eventOnDate(r.event,month+'-01')||(r.event.start?.date||r.event.start?.dateTime||'').slice(0,7)===month);
+ html+=remote.length?'<h2 class="section-title">Google 行程（已選日曆）</h2>'+remote.map(remoteCard).join(''):'';
+ if(!dated.length&&!remote.length)html+='<div class="empty">此日期範圍沒有符合條件的安排。</div>';
+ $('#content').innerHTML=html;
+}
+function visibleRemote(){
+ if(Object.values(filters).some(Boolean))return []; // 分類僅作用於本機待辦，Google 行程另在連線頁完整查看。
+ const links=new Set(state.tasks.filter(t=>t.g?.account===state.remote.account).map(t=>t.g.calendarId+'|'+t.g.eventId));
+ return state.remote.events.filter(r=>state.calendar.selected.includes(r.calendarId)&&!links.has(r.calendarId+'|'+r.event.id));
+}
+function eventOnDate(e,date){try{return Model.onDate({...Model.eventFields(e)},date)}catch{return false}}
+function remoteCard(r){
+ let t;try{t=Model.eventFields(r.event)}catch{return ''}
+ const name=state.remote.calendars.find(c=>c.id===r.calendarId)?.name||r.calendarId,link=safeLink(r.event.htmlLink||'');
+ return '<article class="record"><div class="record-body"><h3>'+E(t.title)+'</h3><p>'+E(name)+'<br>'+E(t.startDate)+' '+E(t.startTime)+' → '+E(t.endDate)+' '+E(t.endTime)+'（臺北時間）</p><div class="row-actions"><button data-act="import-google" data-cal="'+E(r.calendarId)+'" data-event="'+E(r.event.id)+'">加入待辦並分類</button>'+(link?'<a href="'+E(link)+'" target="_blank" rel="noopener noreferrer">在 Google 開啟</a>':'')+'</div></div></article>';
+}
+function listsPage(){
+ $('#content').innerHTML='<p class="note">所有名稱由你手動加入。任務表單也可直接輸入新名稱，儲存時會加入清單；改名會更新所有相關任務，使用中的名稱無法直接刪除。</p>'+Model.lists.filter(k=>APP.community||k!=='community').map(k=>'<section class="panel list-panel"><h3>'+Model.labels[k]+'</h3><form class="list-add" data-list="'+k+'"><label class="sr-only" for="new-'+k+'">新增'+Model.labels[k]+'</label><input id="new-'+k+'" name="name" maxlength="160" required placeholder="手動輸入'+Model.labels[k]+'"><button type="submit">＋ 新增</button></form><div class="list-names">'+state.lists[k].map(n=>'<div><button class="tag" data-pick="'+k+'" data-value="'+E(n)+'">'+E(n)+' · '+state.tasks.filter(t=>t[k]===n).length+'</button><button data-act="rename-list" data-list="'+k+'" data-value="'+E(n)+'" aria-label="改名 '+E(n)+'">改名</button><button data-act="remove-list" data-list="'+k+'" data-value="'+E(n)+'" class="danger">刪除</button></div>').join('')+'</div></section>').join('');
+}
+function googlePage(){
+ const c=state.calendar,range=bridge.range(),writable=state.remote.calendars.filter(c=>['owner','writer'].includes(c.accessRole));
+ $('#content').innerHTML='<section class="panel"><h3>只使用 Gmail／Google 行事曆</h3><p class="note">先儲存一次性連線設定，再按連結授權。任務卡的「一鍵加入」會直接建立 Google 事件，並套用開始、結束、顏色與提前提醒。主要聯繫人僅留在任務，不會自動寄出邀請。</p><p class="notice">'+E(state.remote.account?'上次讀取帳號：'+state.remote.account:'尚未連結帳號')+'<br>'+E(bridge.active()?'目前已授權':'目前未授權／授權已過期')+' · '+E(state.remote.lastSync?'最後成功讀取：'+new Date(state.remote.lastSync).toLocaleString('zh-TW',{timeZone:'Asia/Taipei'}):'尚未讀取 Google 資料')+'</p><form id="google-config"><div class="form-grid"><label class="full">Google OAuth 網頁用戶端 ID<input name="clientId" value="'+E(c.clientId)+'" placeholder="…apps.googleusercontent.com"></label><label>讀取開始日期<input type="date" name="rangeStart" required value="'+range.from+'"></label><label>讀取結束日期<input type="date" name="rangeEnd" required value="'+range.to+'"></label><label class="full">新增任務送到哪個 Google 行事曆<select name="target">'+options(writable.map(c=>c.id),'授權後選擇',c.target)+'</select></label><label class="full check-label"><input type="checkbox" name="auto" '+(c.auto?'checked':'')+'>APP 開啟時，每兩分鐘讀取 Google 更新</label></div><button type="submit">儲存連線設定</button></form><div class="actions"><button class="primary" data-act="connect">連結 Gmail／Google 行事曆</button><button data-act="sync">立即讀取同步</button><button data-act="disconnect">中斷連線</button><button data-act="revoke">撤銷 Google 授權</button></div><p class="note">Google 提醒在事件建立成功後，依你的 Google 行事曆與手機通知設定送出。本機未送到 Google 的任務不會在 APP 關閉時提醒。此網頁沒有背景同步；授權到期請重新連線。</p></section><section class="panel"><h3>顯示自己的與別人的行事曆</h3><p class="note">清單來自你 Google 帳號已訂閱、或對方已分享的行事曆。只有空閒資訊權限的日曆無法讀取任務內容。</p><div class="calendar-list">'+state.remote.calendars.map(cal=>'<label class="check-label"><input type="checkbox" data-calendar="'+E(cal.id)+'" '+(c.selected.includes(cal.id)?'checked':'')+'>'+E(cal.name)+' <small>'+E(({owner:'可編輯',writer:'可編輯',reader:'唯讀',freeBusyReader:'僅忙碌資訊'}[cal.accessRole])||cal.accessRole)+'</small></label>').join('')+'</div><form id="subscribe"><label>加入已獲分享權限的行事曆<input name="calendarId" required placeholder="輸入對方提供的行事曆 ID"></label><button type="submit">加入 Google 日曆清單並讀取</button></form><p class="note">新增訂閱會改動你 Google 的日曆清單，不能繞過分享權限。請對方先在 Google 日曆設定中分享；主要聯繫人的 Gmail 不會自動變成共享授權。</p></section><section class="panel"><h3>Google 行程快取 · '+state.remote.events.length+' 筆</h3><p class="note">可加入待辦後手動指定分類、資料夾及聯繫人。唯讀行事曆只能讀取。APP 任務刪除僅影響本機，Google 事件仍保留。</p>'+state.remote.events.filter(r=>state.calendar.selected.includes(r.calendarId)).map(remoteCard).join('')+'</section>';
+ const target=$('#google-config').elements.target;for(const option of target.options){const cal=writable.find(c=>c.id===option.value);if(cal)option.textContent=cal.name}
+}
+function backupPage(){
+ $('#content').innerHTML='<section class="panel"><h3>備份與搬移資料</h3><p class="note">任務、手動清單與設定保存在本瀏覽器；Google 授權權杖只放在記憶體，不寫進備份。不同裝置的分類、完成狀態與聯繫人不會透過 Google 事件同步，換裝置請匯出還原。Google 事件標題、起迄時間、內容與提醒可在授權後同步。</p><div class="actions"><button data-act="backup">下載備份</button><button data-act="restore">還原備份（支援舊版）</button><button data-act="raw">匯出原始資料</button></div></section><section class="panel"><h3>任務與統計</h3><p class="note">「已完成／未完成」依完成狀態；「超期任務」為尚未完成且已超過結束日期時間；「已到期」為臺北時間今天結束、尚未完成的任務，可能與超期重疊。未填結束時間時，以當天 23:59:59 判定。數字依目前分類、資料夾等篩選計算，點選會列出明細。任務皆以臺北時間處理。</p><p class="note">分類、資料夾、主要聯繫人、社區、廠商、負責人、階段、優先級全部手動輸入。可在「手動清單管理」改名。紅黃綠藍紫灰是標題顏色，並有文字標示，不只依顏色辨識。</p></section><section class="panel"><h3>國定假日與週末</h3><p class="note">內建 2026、2027 人事行政總處辦公日曆資料，假日與補假顯示名稱；週末另上底色。其他年份不臆測假日。參考來源：<a href="https://data.gov.tw/dataset/14718" target="_blank" rel="noopener">政府資料開放平臺</a>。僅為日期資訊，不替個別社區判斷排班。</p></section><section class="panel"><h3>Google 設定與同步範圍</h3><p class="note">本版已提供實際 Google API 串接程式；需填寫自己的 Google OAuth 網頁用戶端 ID、啟用 Calendar API 並由 Gmail 帳號授權。從 GitHub Pages HTTPS 網址開啟，不能用 file:// 完成 Google 連線。詳細步驟見下載包的「使用與Google設定說明.md」。未填設定時，手動待辦功能可正常使用，Google 功能會顯示尚未連線。</p><p class="note">同步按鈕與自動讀取會將 Google 修改帶回已關聯任務；本機修改用卡片的「更新 Google 行事曆」送出。衝突時保留本機資料並阻止覆寫，可先備份後採用 Google 版本。Google 刪除的事件會顯示衝突；解除關聯後可保留本機任務重新建立。APP 不會自動刪除 Google 事件，也不寄出聯繫人邀請。</p></section>';
+}
+function openEditor(t=null){
+ editId=t?.id||null;editStamp=t?.updated||'';
+ const d=t||{...Model.blank(),startDate:selected||'',endDate:selected||''};
+ $('#dialog-title').textContent=t?'編輯任務':'新增任務';
+ const fields=Model.lists.filter(k=>APP.community||k!=='community').map(k=>'<label>'+Model.labels[k]+'（手動）<input name="'+k+'" list="list-'+k+'" maxlength="160" value="'+E(d[k])+'" placeholder="輸入或選擇自己的名稱"><datalist id="list-'+k+'">'+state.lists[k].map(v=>'<option value="'+E(v)+'">').join('')+'</datalist></label>').join('');
+ $('#form').innerHTML='<div class="form-grid"><label class="full">標題（必填）<input name="title" id="title" required maxlength="160" value="'+E(d.title)+'"></label>'+fields+'<label>開始日期<input name="startDate" type="date" value="'+d.startDate+'"></label><label>開始時間<input name="startTime" type="time" value="'+d.startTime+'"></label><label>結束日期<input name="endDate" type="date" value="'+d.endDate+'"></label><label>結束時間<input name="endTime" type="time" value="'+d.endTime+'"></label><label class="full check-label"><input type="checkbox" name="allDay" '+(d.allDay?'checked':'')+'>全天（不使用時間）</label><label>提前通知數量<input name="reminderValue" type="number" min="0" step="1" value="'+E(d.reminderValue)+'" placeholder="留白為不通知"></label><label>提前通知單位<select name="reminderUnit">'+['分鐘','小時','天'].map(u=>'<option '+(d.reminderUnit===u?'selected':'')+'>'+u+'</option>').join('')+'</select></label><label class="full check-label"><input type="checkbox" name="reminderDefault" '+(d.reminderDefault?'checked':'')+'>沿用 Google 日曆預設提醒（勾選時忽略上方通知數量）</label><label>標題顏色<select name="color">'+Object.keys(Model.colors).map(c=>'<option '+(c===d.color?'selected':'')+'>'+c+'</option>').join('')+'</select></label><label>聯絡方式<input name="contact" maxlength="500" value="'+E(d.contact)+'" placeholder="手動填電話或 Gmail"></label>'+(APP.community?'<label>下次保養日<input type="date" name="next" value="'+d.next+'"></label><label>費用（NT$）<input type="number" name="cost" min="0" step=".01" value="'+E(d.cost)+'"></label>':'')+'<label class="full">追蹤進度／內容<textarea name="notes" maxlength="20000">'+E(d.notes)+'</textarea></label><label class="full check-label"><input type="checkbox" name="completed" '+(d.completed?'checked':'')+'>已完成</label></div><p class="note">時間以臺北時間為準。提醒需成功加入 Google 才由 Google 通知，上限 28 天。</p><p id="form-error" class="error" role="alert"></p><div class="form-actions"><button type="button" data-act="close">取消</button><button type="submit" class="primary">儲存任務</button></div>';
+ $('#editor').showModal();$('#title').focus();
+}
+
+
+
+'use strict';
+function configSave(){
+ const f=$('#google-config');if(!f)return;
+ if(!f.reportValidity())throw Error('請檢查設定欄位。');
+ const data=new FormData(f),rangeStart=String(data.get('rangeStart')||''),rangeEnd=String(data.get('rangeEnd')||'');
+ if(!Model.validDate(rangeStart)||!Model.validDate(rangeEnd)||!rangeStart||!rangeEnd||rangeEnd<rangeStart)throw Error('同步起迄日期不正確。');
+ write(s=>Object.assign(s.calendar,{clientId:String(data.get('clientId')||'').trim(),rangeStart,rangeEnd,target:String(data.get('target')||''),auto:data.has('auto')}));
+}
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button,a');if(!b)return;
+ if(b.dataset.view){setView(b.dataset.view);return}
+ if(b.dataset.bucket){filters.bucket=filters.bucket===b.dataset.bucket?'':b.dataset.bucket;view='list';selected='';render();return}
+ if(b.dataset.pick){filters[b.dataset.pick]=b.dataset.value;view='list';render();$('#view-title').scrollIntoView({block:'start',behavior:'smooth'});return}
+ if(b.dataset.month){
+  const [y,m]=month.split('-').map(Number);month=b.dataset.month==='today'?Model.today().slice(0,7):Model.dateKey(new Date(y,m-1+Number(b.dataset.month),1)).slice(0,7);selected='';render();return;
+ }
+ if(b.dataset.date){selected=b.dataset.date;render();return}
+ const action=b.dataset.act,id=b.dataset.id;
+ if(!action)return;
+ if(action==='add'||action==='new-date'){openEditor();return}
+ if(action==='close'){$('#editor').close();return}
+ if(action==='clear'){filters={};selected='';render();return}
+ if(action==='edit'){const t=state.tasks.find(t=>t.id===id);if(t)openEditor(t);return}
+ run(async()=>{
+  if(action==='backup')backup();
+  if(action==='restore')$('#import-file').click();
+  if(action==='raw')exportJSON({app:APP.id,v2:localStorage.getItem(storageKey),v1:localStorage.getItem(oldKey)},APP.id+'-raw-'+Model.today()+'.json');
+  if(action==='toggle')write(s=>{const t=s.tasks.find(t=>t.id===id);if(t){t.completed=!t.completed;t.updated=new Date().toISOString()}});
+  if(action==='delete'){
+   const t=state.tasks.find(t=>t.id===id);
+   if(t&&confirm('只刪除本機「'+t.title+'」？Google 上的事件仍會保留。'))write(s=>s.tasks=s.tasks.filter(t=>t.id!==id));
+  }
+  if(action==='unlink'&&confirm('解除 Google 關聯？本機任務及 Google 事件都會保留。再次加入可能產生另一筆事件，請先確認。'))write(s=>{const t=s.tasks.find(t=>t.id===id);if(t)t.g=null});
+  if(action==='push')await bridge.push(id);
+  if(action==='adopt'&&confirm('以 Google 的標題、日期時間、顏色、內容與提醒取代本機欄位？分類、資料夾、聯繫人會保留。建議先備份。'))await bridge.adopt(id);
+  if(action==='import-google')bridge.importEvent(b.dataset.cal,b.dataset.event);
+  if(action==='connect'){configSave();await bridge.authorize(state.calendar.clientId);render()}
+  if(action==='sync'){configSave();await bridge.sync();render()}
+  if(action==='disconnect'){bridge.disconnect();render()}
+  if(action==='revoke'&&confirm('撤銷此 APP 的 Google 授權？不會刪除任務或行事曆事件。')){await bridge.revoke();render()}
+  if(action==='rename-list'){
+   const name=prompt('新的'+Model.labels[b.dataset.list]+'名稱',b.dataset.value);
+   if(name?.trim()){write(s=>Model.rename(s,b.dataset.list,b.dataset.value,name.trim()));if(filters[b.dataset.list]===b.dataset.value)filters[b.dataset.list]=name.trim();render()}
+  }
+  if(action==='remove-list'&&confirm('刪除清單名稱「'+b.dataset.value+'」？使用中的名稱會阻止刪除。'))write(s=>Model.removeList(s,b.dataset.list,b.dataset.value));
+  if(action==='next'){
+   const t=state.tasks.find(t=>t.id===id);
+   if(t&&confirm('建立 '+t.next+' 的下次保養任務？')){
+    const copy=Model.task({...t,id:Model.uid(),startDate:t.next,endDate:t.next,next:'',completed:false,g:null,title:(t.title.slice(0,150)+'（下次）'),updated:new Date().toISOString()});
+    write(s=>s.tasks.push(copy));
+   }
+  }
+ });
+});
+document.addEventListener('input',e=>{
+ if(e.target.id==='search'){filters.search=e.target.value.trim();render(true)}
+});
+document.addEventListener('change',e=>{
+ if(e.target.dataset.filter){filters[e.target.dataset.filter]=e.target.value;render()}
+ if(e.target.dataset.calendar){run(()=>write(s=>{const id=e.target.dataset.calendar;s.calendar.selected=e.target.checked?[...new Set([...s.calendar.selected,id])]:s.calendar.selected.filter(k=>k!==id)}))}
+ if(e.target.name==='allDay'&&e.target.closest('#form')){
+  for(const k of ['startTime','endTime'])$('#form').elements[k].disabled=e.target.checked;
+ }
+});
+document.addEventListener('submit',e=>{
+ if(e.target.id==='form'){
+  e.preventDefault();const f=e.target;
+  if(!f.reportValidity())return;
+  try{
+   const data=new FormData(f),old=state.tasks.find(t=>t.id===editId),draft={...(old||Model.blank())};
+   for(const k of ['title',...Model.lists,'contact','startDate','startTime','endDate','endTime','reminderValue','reminderUnit','color','notes','next','cost'])if(data.has(k))draft[k]=String(data.get(k)).trim();
+   draft.allDay=data.has('allDay');draft.completed=data.has('completed');draft.reminderDefault=data.has('reminderDefault');
+   if(draft.allDay){draft.startTime='';draft.endTime=''}
+   draft.updated=new Date().toISOString();if(draft.g)draft.g={...draft.g,dirty:true};
+   const t=Model.task(draft);
+   write(s=>{
+    if(editId){const prev=s.tasks.find(t=>t.id===editId);if(!prev||prev.updated!==editStamp)throw Error('此任務已被其他分頁或同步修改。請關閉視窗後重新編輯。');s.tasks=s.tasks.map(r=>r.id===editId?t:r)}
+    else s.tasks.push(t);
+    for(const k of Model.lists)if(t[k]&&!s.lists[k].includes(t[k]))s.lists[k].push(t[k]);
+   });
+   $('#editor').close();toast('任務已儲存；需要 Google 提醒時，按任務卡的「一鍵加入／更新 Google 行事曆」。');
+  }catch(err){$('#form-error').textContent=err.message}
+ }else if(e.target.matches('.list-add')){
+  e.preventDefault();const f=e.target,k=f.dataset.list,name=f.elements.name.value.trim();
+  run(()=>{if(!name)throw Error('請填名稱。');if(state.lists[k].includes(name))throw Error('名稱已存在。');write(s=>s.lists[k].push(name))});
+ }else if(e.target.id==='google-config'){e.preventDefault();run(()=>{configSave();toast('Google 連線設定已儲存。')})}
+ else if(e.target.id==='subscribe'){e.preventDefault();const id=e.target.elements.calendarId.value;run(()=>bridge.subscribe(id))}
+});
+$('#import-file').onchange=async e=>{
+ const file=e.target.files[0];e.target.value='';if(!file)return;
+ try{
+  if(file.size>10*1024*1024)throw Error('備份超過 10 MB。');
+  const data=JSON.parse(await file.text());
+  if(data.app!==APP.id)throw Error('這是另一套 APP 的備份，B 與 C 不能混用。');
+  const imported=data.version===2?Model.validate(data.state):data.version===1?Model.migrate(data.items):null;
+  if(!imported)throw Error('不支援此備份版本。');
+  imported.remote=Model.fresh().remote;
+  if(confirm('以備份的 '+imported.tasks.length+' 筆任務覆蓋目前 '+state.tasks.length+' 筆與手動清單？請先備份。')){
+   write(s=>Object.assign(s,imported));bridge.disconnect();render();toast('備份已還原；Google 需重新授權。');
+  }
+ }catch(err){toast('未還原：'+err.message)}
+};
+window.addEventListener('storage',e=>{if(e.key===storageKey){load();render();toast('另一分頁已更新資料。')}});
+setInterval(()=>{if(!document.hidden&&state.calendar.auto&&bridge.active()&&!bridge.busy&&!$('#editor').open)run(()=>bridge.sync())},120000);
+setInterval(()=>{if(['list','calendar'].includes(view)&&!$('#editor').open)render(true)},60000);
+load();document.body.classList.toggle('community',APP.community);render();
+
+</script></body></html>
